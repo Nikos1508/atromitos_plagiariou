@@ -1,22 +1,21 @@
-<nav class="font-sams flex flex-row items-center">
+<nav class="flex flex-row items-center">
 
-    <a href="/" aria-label="Ατρόμητος Πλαγιαρίου"><img src="/banner.png" alt="Logo" width="200px"/></a>
+    <a href="/" aria-label="Ατρόμητος Πλαγιαρίου"><img src="/banner.png" alt="Logo" class="w-[10vw]"/></a>
 
-    <ul class= "flex flex-row items-center justify-evenly">
-
-        <li class="nav-link font-bold opacity-75 relative text-5xl no-underline text-frosted-blue">
+    <div class="flex flex-row items-center justify-evenly w-[90vw]">
+        <div class="nav-link font-bold opacity-75 relative text-6xl no-underline">
             <i class= "  "></i>
             <a href= "/" class="no-underline"> <slot class="navbar-item"> Αρχική </slot> </a>
-        </li>
+        </div>
 
-        <li class="nav-link font-bold opacity-75 relative text-5xl no-underline text-frosted-blue">
+        <div class="nav-link font-bold opacity-75 relative text-6xl no-underline">
             <i class="  " ></i>
             <a href= "/championship" class="no-underline"> <slot class="navbar-item"> Πρωτάθλημα </slot> </a>
-        </li>
+        </div>
 
-        <li class="nav-link font-bold opacity-75 relative text-5xl no-underline text-frosted-blue flex">
-            <div class="dropdown w-380px h-10 text-center text-white text-4xl font-semibold overflow-hidden flex flex-col items-center">
-                <button class="dropbtn"> Η ομάδα μας <i class="fa fa-caret-down"></i> </button>
+        <div class="nav-link">
+            <div class="dropdown text-center overflow-hidden flex flex-col items-center">
+                <div class="dropbtn font-bold opacity-75 relative no-underline text-5xl"> Η ομάδα μας <i class="fa-carpet fa-down"> </i> </div>
                 <div class="dropdown-content hidden absolute bg-slate-300 min-w-40 z-10 mt-10 py-2.5 rounded-lg">
                     <a href="/history" class="float-none text-slate-500 py-3 px-4 no-underline block text-center"> Η ιστορία μας   </a>
                     <a href="/programs" class="float-none text-slate-500 py-3 px-4 no-underline block text-center"> Προγράμματα     </a>
@@ -24,13 +23,13 @@
                     <a href="/contact_us" class="float-none text-slate-500 py-3 px-4 no-underline block text-center"> Επικοινωνία     </a>
                 </div>
             </div>
-        </li>
+        </div>
 
-        <li class="nav-link font-bold opacity-75 relative text-5xl no-underline text-frosted-blue hover:opacity-100 hover:text-frosted-blue">
+        <div class="nav-link font-bold opacity-75 relative text-6xl no-underline">
             <i class="  " ></i>
             <a href= "/matches" class="no-underline"> <slot class="navbar-item"> Αγώνες </slot> </a>
-        </li>
-    </ul>
+        </div>
+    </div>
 </nav>
 
 <style>
@@ -52,11 +51,8 @@ a:active {color: var(--white);}
   color: var(--dark_blue);
   margin: 0;
   width: 380px; 
-  height: 40px; 
   text-align: center;
-  font-size: 32px; 
   font-family: Arial; 
-  font-weight: 600;
   overflow: hidden;
   background-color: var(--blue);
 }
