@@ -1,0 +1,75 @@
+<nav class="font-sams flex flex-row items-center">
+
+    <a href="/" aria-label="Ατρόμητος Πλαγιαρίου"><img src="/banner.png" alt="Logo" width="200px"/></a>
+
+    <ul class= "flex sticky items-center justify-evenly">
+        <li class="nav-link font-bold opacity-75 relative text-5xl no-underline text-frosted-blue flex">
+            <i class= "  "></i>
+            <a href= "/" class="no-underline"> <slot class="navbar-item"> Αρχική </slot> </a>
+        </li>
+
+        <li class="nav-link font-bold opacity-75 relative text-5xl no-underline text-frosted-blue flex">
+            <i class="  " ></i>
+            <a href= "/championship" class="no-underline"> <slot class="navbar-item"> Πρωτάθλημα </slot> </a>
+        </li>
+
+        <li class="nav-link font-bold opacity-75 relative text-5xl no-underline text-frosted-blue flex">
+            <div class="dropdown w-380px h-10 text-center text-white text-4xl font-semibold overflow-hidden flex flex-col items-center">
+                <button class="dropbtn"> Η ομάδα μας <i class="fa fa-caret-down"></i> </button>
+                <div class="dropdown-content hidden absolute bg-slate-300 min-w-40 z-10 mt-10 py-2.5 rounded-lg">
+                    <a href="/history" class="float-none text-slate-500 py-3 px-4 no-underline block text-center"> Η ιστορία μας   </a>
+                    <a href="/programs" class="float-none text-slate-500 py-3 px-4 no-underline block text-center"> Προγράμματα     </a>
+                    <a href="/our_team" class="float-none text-slate-500 py-3 px-4 no-underline block text-center"> Ομάδα αγώνων    </a>
+                    <a href="/contact_us" class="float-none text-slate-500 py-3 px-4 no-underline block text-center"> Επικοινωνία     </a>
+                </div>
+            </div>
+        </li>
+
+        <li class="nav-link font-bold opacity-75 relative text-5xl no-underline text-frosted-blue flex hover:opacity-100 hover:text-frosted-blue">
+            <i class="  " ></i>
+            <a href= "/matches" class="no-underline"> <slot class="navbar-item"> Αγώνες </slot> </a>
+        </li>
+    </ul>
+</nav>
+
+<style>
+
+a{
+    text-decoration: none;
+}
+a{
+    color: var(--dark_blue)
+}
+
+a:visited {color: var(--dark_blue);}
+a:hover {color: var(--smoky_white);}
+a:active {color: var(--white);}
+
+.dropdown .dropbtn { 
+  border: none;
+  outline: none;
+  color: var(--dark_blue);
+  margin: 0;
+  width: 380px; 
+  height: 40px; 
+  text-align: center;
+  font-size: 32px; 
+  font-family: Arial; 
+  font-weight: 600;
+  overflow: hidden;
+  background-color: var(--blue);
+}
+.navbar a:hover, .dropdown:hover .dropbtn {
+  background-color: var(--blue);
+}
+
+
+
+.dropdown-content a:hover {
+  background-color: var(--light_blue);
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+</style>
