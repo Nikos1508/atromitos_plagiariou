@@ -1,22 +1,18 @@
 ---
 import Layout from "../../../layout/default.astro"
-import { getEntry } from "astro:content";
+import { getEntry, getCollection } from "astro:content";
 
-export function getStaticPaths() {
-  return [
-    {params: {match: '1'}},
-    {params: {match: '2'}},
-    {params: {match: '3'}}
-  ];
+export async function getStaticPaths() {
+  const collection = await getCollection('match');
+  return collection.map((entry) => {
+    return {params: {match: entry.id.toString()}}
+  })
 }
 
-let { match } = Astro.params;
-
-match = (await getEntry('match', match)).data
+const { match : matchEntry } = Astro.params;
+const match = (await getEntry('match', matchEntry)).data;
 ---
 
-<Layout title={`Αγώνας: ${match}`}>
-
+<Layout title={`${matchEntry} Agmvd`}>
     {match.teams}
-
 </Layout>
