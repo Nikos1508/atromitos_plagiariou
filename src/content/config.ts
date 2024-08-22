@@ -10,5 +10,5 @@ const matchesCollection = defineCollection({
   });
 
   export const collections = {
-    'matches': matchesCollection,
+    'match': matchesCollection,
   };

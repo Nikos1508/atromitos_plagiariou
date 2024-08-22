@@ -1,18 +1,5 @@
 ---
 import Layout from "../../layout/default.astro"
-import { getEntry } from "astro:content";
-
-export function getStaticPaths() {
-  return [
-    {params: {country: 'france'}},
-    {params: {country: 'germany'}},
-    {params: {country: 'greece'}},
-    {params: {country: 'italy'}},
-    {params: {country: 'poland'}},
-    {params: {country: 'spain'}},
-    {params: {country: 'uk'}}
-  ];
-}
 ---
 
 <Layout title="Αγώνες">
