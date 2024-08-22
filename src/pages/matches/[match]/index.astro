@@ -11,7 +11,8 @@ export function getStaticPaths() {
 }
 
 const { match } = Astro.params;
-const match = (await getEntry('match', match)).data
+
+match = (await getEntry('match', match)).data
 ---
 
 <Layout title={`Αγώνας: ${match}`}>
