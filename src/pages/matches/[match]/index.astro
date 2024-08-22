@@ -1,0 +1,21 @@
+---
+import Layout from "../../../layout/default.astro"
+import { getEntry } from "astro:content";
+
+export function getStaticPaths() {
+  return [
+    {params: {match: 'match_1'}},
+    {params: {match: 'match_1'}},
+    {params: {match: 'match_3'}}
+  ];
+}
+
+const { match } = Astro.params;
+const match = (await getEntry('match', match)).data
+---
+
+<Layout title={`Αγώνας: ${match}`}>
+
+    {match.match_1.teams}
+
+</Layout>

@@ -1,9 +1,114 @@
 ---
-import Layout from "../layout/default.astro"
+import Layout from "../../layout/default.astro"
+import { getEntry } from "astro:content";
+
+export function getStaticPaths() {
+  return [
+    {params: {country: 'france'}},
+    {params: {country: 'germany'}},
+    {params: {country: 'greece'}},
+    {params: {country: 'italy'}},
+    {params: {country: 'poland'}},
+    {params: {country: 'spain'}},
+    {params: {country: 'uk'}}
+  ];
+}
 ---
 
 <Layout title="Αγώνες">
-	
-	
+	<div>
+
+        <div class="flex flex-row justify-around items-center text-blanched-almond">
+
+            <div class="flex justify-center items-center">
+                    <h2 class="text-center text-3xl"> 
+                        ΑΕ Κρήνης - Ατρόμητος Πλαγιαρίου 
+                        <br> (2 - 0) 
+                        <br> 1η Αγωνιστική
+                    </h2> 
+            </div>
+
+            <div class="">
+                <h2 class="text-center text-3xl"> 
+                    ΑΕ Κρήνης - Ατρόμητος Πλαγιαρίου 
+                    <br> (2 - 0) 
+                    <br> 1η Αγωνιστική
+                </h2> 
+            </div>
+
+            <div class="flex flex-row">
+                <h2 class="text-center text-3xl"> 
+                    ΑΕ Κρήνης - Ατρόμητος Πλαγιαρίου 
+                    <br> (2 - 0) 
+                    <br> 1η Αγωνιστική
+                </h2> 
+            </div>
+
+        </div>
+
+        <div class="flex flex-row justify-around items-center text-blanched-almond">
+
+            <div class="flex flex-row text-5xl">
+                    <h2 class=""> 2392 303985 </h2> 
+            </div>
+
+            <div class="flex flex-row text-5xl">
+                <h2 class=""> 2392 303985 </h2> 
+            </div>
+
+            <div class="flex flex-row text-5xl">
+                <h2 class=""> 2392 303985 </h2> 
+            </div>
+
+        </div>
+
+        <div class="flex flex-row justify-around items-center text-blanched-almond">
+
+            <div class="flex flex-row text-5xl">
+                    <h2 class=""> 2392 303985 </h2> 
+            </div>
+
+            <div class="flex flex-row text-5xl">
+                <h2 class=""> 2392 303985 </h2> 
+            </div>
+
+            <div class="flex flex-row text-5xl">
+                <h2 class=""> 2392 303985 </h2> 
+            </div>
+
+        </div>
+
+        <div class="flex flex-row justify-around items-center text-blanched-almond">
+
+            <div class="flex flex-row text-5xl">
+                    <h2 class=""> 2392 303985 </h2> 
+            </div>
+
+            <div class="flex flex-row text-5xl">
+                <h2 class=""> 2392 303985 </h2> 
+            </div>
+
+            <div class="flex flex-row text-5xl">
+                <h2 class=""> 2392 303985 </h2> 
+            </div>
+
+        </div>
+
+        <div class="flex flex-row justify-around items-center text-blanched-almond">
+
+            <div class="flex flex-row text-5xl">
+                    <h2 class=""> 2392 303985 </h2> 
+            </div>
+
+            <div class="flex flex-row text-5xl">
+                <h2 class=""> 2392 303985 </h2> 
+            </div>
+
+            <div class="flex flex-row text-5xl">
+                <h2 class=""> 2392 303985 </h2> 
+            </div>
+
+        </div>
+    </div>
 
 </Layout>
