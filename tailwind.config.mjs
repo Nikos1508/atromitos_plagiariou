@@ -7,7 +7,8 @@ export default {
 				'pitch': '#2d9734',
 				'blanched-almond': 	'#FFEBCD',
 				'dropdown-bg': '#5375A9',
-				
+				'home-team': '#1847bd',
+				'goalkeeper-home-team': '#2eabd8',
 			  },
 			width: {
 				'380px': '380px'

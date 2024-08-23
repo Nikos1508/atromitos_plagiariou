@@ -1,5 +1,6 @@
 ---
-import Layout from "../../../layout/default.astro"
+import Layout from "../../../layout/default.astro";
+import Pitch from "../../../components/Pitch.astro";
 import { getEntry, getCollection } from "astro:content";
 
 export async function getStaticPaths() {
@@ -24,195 +25,17 @@ const match = (await getEntry('match', matchEntry)).data;
 
       <div class="w-100vw h-88vh align-middle"> 
 
-        <section class="pitch bg-pitch w-[27vw] h-[75vh] relative ml-10       after:left-[13.4vw] after:h-[24.9vw] after:top-[11vh] after:absolute after:border-2 after:border-solid after:border-white after:rotate-90         before:border-2 before:border-white before:border-solid before:absolute before:top-[2vh] before:left-[1vw] before:block before:w-[25vw] before:h-[71vh]">
-          <div class="field left">
-              <div class="penalty-area absolute border-2 border-solid border-white rotate-90 h-[140px] w-[80px] top-[58vh] left-[11vw] before:border-2 before:border-white before:border-solid before:absolute before:top-[10vw] before:left-[5.4vh] before:block before:w-[5vh] before:h-[5vw]">
-              </div>
-          </div>
-          <div class="center-circle absolute w-16 h-16 block rounded-full border-2 border-solid border-white left-[11.5vw] top-[33vh]       after:left-[1.8vw] after:top-[3.45vh] after:h-[2px] after:w-[2px] after:absolute after:border-4 after:border-solid after:border-white after:rounded-full after:rotate-90"></div>
-            <div class="home-team">
-              <div class="player one"></div>
-              <div class="player two"></div>
-              <div class="player three"></div>
-              <div class="player four"></div>
-              <div class="player five"></div>
-              <div class="player six"></div>
-              <div class="player seven"></div>
-              <div class="player eight"></div>
-              <div class="player nine"></div>
-              <div class="player ten"></div>
-              <div class="player eleven"></div>
-            </div>
-            <div class="visitor-team">
-              <div class="player one"></div>
-              <div class="player two"></div>
-              <div class="player three"></div>
-              <div class="player four"></div>
-              <div class="player five"></div>
-              <div class="player six"></div>
-              <div class="player seven"></div>
-              <div class="player eight"></div>
-              <div class="player nine"></div>
-              <div class="player ten"></div>
-              <div class="player eleven"></div>
-            </div>
-            <div class="field right">
-              <div class="penalty-area absolute border-2 border-solid border-white rotate-90 h-[140px] w-[80px] top-[58vh] left-[11vw] before:border-2 before:border-white before:border-solid before:absolute before:top-[10vw] before:left-[5.4vh] before:block before:w-[5vh] before:h-[5vw]">
-              </div>
-          </div>
-        </section> 
+        <Pitch> </Pitch>
 
       </div>
     </div>
 </div>
+
 <div style="text-align:center">
     <span class="dot" onclick="currentSlide(1)"></span> 
     <span class="dot" onclick="currentSlide(2)"></span> 
     <span class="dot" onclick="currentSlide(3)"></span> 
 </div>
-
-<style>
-
-.penalty-area:before{
-  top: 35px;
-}
-.left .penalty-area:before{
-  left:0px;
- border-left:0;
- }
- .right .penalty-area:before{
-  right:0px;
- border-right:0;
- }
-
-.penalty-area:after{
-  position: absolute;
-  height: 2px;
-  width: 2px;
-  top: 70px;
-  background-color:white;
-  content:"";
-}
-.left .penalty-area:after{
-  right:15px;
-}
-.right .penalty-area:after{
-  left:15px;
-}
-
-.player{
-position:absolute;
-border-radius:50%;
-width:20px;
-height:20px;
-}
-.player:after{
-font-size:10px;
-position:absolute;
-left:3px;
-}
-.home-team .player{
-background:rgb(24, 71, 189);
-}
-.home-team .player.one{
-top:260px;
-left:25px;
-background:rgb(46, 171, 216);
-}
-.home-team .player.one:after{
-content:"1";
-}
-.home-team .player.two{
-top:80px;
-left:200px;
-}
-.home-team .player.two:after{
-content:"2";
-}
-.home-team .player.three{
-top:180px;
-left:200px;
-}
-.home-team .player.three:after{
-content:"3";
-}
-.home-team .player.four{
-top:320px;
-left:200px;
-}
-.home-team .player.four:after{
-content:"4";
-}
-.home-team .player.five{
-top:420px;
-left:200px;
-}
-.home-team .player.five:after{
-content:"5";
-}
-.home-team .player.six{
-top:80px;
-left:420px;
-}
-.home-team .player.six:after{
-content:"6";
-}
-.home-team .player.seven{
-top:180px;
-left:420px;
-}
-.home-team .player.seven:after{
-content:"7";
-}
-.home-team .player.eight{
-top:320px;
-left:420px;
-}
-.home-team .player.eight:after{
-content:"8";
-}
-.home-team .player.nine{
-top:420px;
-left:420px;
-}
-.home-team .player.nine:after{
-content:"9";
-}
-.home-team .player.ten{
-top:165px;
-left:630px;
-}
-.home-team .player.ten:after{
-content:"10";
-left:0px;
-}
-.home-team .player.eleven{
-top:350px;
-left:630px;
-}
-.home-team .player.eleven:after{
-content:"11";
-left:0px;
-}
-
-.player{
-animation-duration:5s;
-animation-timing-function:linear;
-animation-delay:2s;
-animation-iteration-count:infinite;
-animation-direction:alternate;
-animation-play-state:running;
-}
-.home-team .player.nine{
-animation-name:nine;
-}
-
-.home-team .player.eight{
-animation-name:eight;
-}
-
-    </style>
-
 
 <script>
   let slideIndex = 0;
