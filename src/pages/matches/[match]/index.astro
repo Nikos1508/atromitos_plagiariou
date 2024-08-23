@@ -15,27 +15,45 @@ const match = (await getEntry('match', matchEntry)).data;
 ---
 
 <Layout title={`Αγώνες - ${matchEntry}η Αγωνιστική`}>
+<div class="flex flex-row items-center">
+  <div>
+    <div class="relative m-auto">
+      <div class="mySlides fade hidden">
+        <div class="text-blue-950 bg-grayish-blue opacity-85 text-4xl bottom-0 rmr-1 absolute px-3 py-1"> </div>
+        <div class="w-100vw h-88vh align-middle"> 
 
-  <div class="relative m-auto">
-    
-    <div class="mySlides fade hidden">
-      <div class="text-blue-950 bg-grayish-blue opacity-85 text-4xl bottom-0 rmr-1 absolute px-3 py-1">
+          <Pitch> </Pitch>
 
-      </div>
-
-      <div class="w-100vw h-88vh align-middle"> 
-
-        <Pitch> </Pitch>
-
+        </div>
       </div>
     </div>
+
+    <div style="text-align:center">
+        <span class="dot" onclick="currentSlide(1)"></span> 
+        <span class="dot" onclick="currentSlide(2)"></span> 
+        <span class="dot" onclick="currentSlide(3)"></span> 
+    </div>
+  </div>
+  <div class="flex flex-col justify-between items-center">
+      <div class="bg-amber-600 p-3 ">
+        <audio controls class="">
+          <source src="../../../../public/audio.mp3" type="audio/mpeg">
+        </audio>
+      </div>
+      <div class="">
+        <p class="text-5xl font-semibold bg-blue-600 p-3 rounded-xl text-center"> {match.teams} </p>
+        {match.score}
+      </div>
+  </div>
 </div>
 
-<div style="text-align:center">
-    <span class="dot" onclick="currentSlide(1)"></span> 
-    <span class="dot" onclick="currentSlide(2)"></span> 
-    <span class="dot" onclick="currentSlide(3)"></span> 
-</div>
+
+
+
+
+
+
+
 
 <script>
   let slideIndex = 0;
