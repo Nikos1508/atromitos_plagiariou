@@ -11,7 +11,7 @@ import Layout from "../../layout/default.astro"
 	<div class="mt-8 overflow-hidden">
 
         <div class="flex flex-row justify-around items-center text-blanched-almond my-4">
-            <a href="../matches/match_1">
+            <a href="../matches/1">
                 <div class="animate slide1 flex justify-center items-center border-4 rounded-xl p-3 border-blue-400 bg-sky-600">
                         <h2 class="text-center text-3xl"> 
                             ΑΕ Κρήνης - Ατρόμητος Πλαγιαρίου 
@@ -227,8 +227,7 @@ import Layout from "../../layout/default.astro"
 <style>
     .animate {
         opacity: 0;
-        /* Animation will only trigger when .in-view is added */
-        transition: opacity 0.75s, transform 0.75s; /* Fallback in case JS fails */
+        transition: opacity 0.75s, transform 0.75s;
     }
 
     .animate.in-view {

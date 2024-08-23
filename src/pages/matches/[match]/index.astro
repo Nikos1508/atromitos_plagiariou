@@ -13,6 +13,58 @@ const { match : matchEntry } = Astro.params;
 const match = (await getEntry('match', matchEntry)).data;
 ---
 
-<Layout title={`${matchEntry} Agmvd`}>
-    {match.teams}
+<Layout title={`Αγώνες - ${matchEntry}η Αγωνιστική`}>
+
+  <div class="relative m-auto">
+    
+    <div class="mySlides fade hidden">
+      <div class="text-blue-950 bg-grayish-blue opacity-85 text-4xl bottom-0 rmr-1 absolute px-3 py-1">
+
+      </div>
+
+      <div class="w-100vw h-88vh align-middle"> 
+
+      </div>
+    </div>
+    
+    <div class="mySlides fade hidden">
+    <div class="text-blue-950 bg-grayish-blue opacity-85 text-4xl bottom-0 mr-1 absolute px-3 py-1"> qwerqwedqd </div>
+    <img src="../../../../public/banner.png" class="w-100vw h-88vh align-middle">
+    </div>
+
+    <div class="mySlides fade hidden">
+    <div class="text-blue-950 bg-grayish-blue opacity-85 text-4xl bottom-0 mr-1 absolute px-3 py-1"> qwdwqd </div>
+    <img src="../../../../public/banner.png" class="w-100vw h-88vh align-middle">
+    </div>
+
+</div>
+
+<div style="text-align:center" class="bg-red-800 relative w-10 h-2 p-10">
+    <span class="dot bg-red-950" onclick="currentSlide(1)"></span> 
+    <span class="dot" onclick="currentSlide(2)"></span> 
+    <span class="dot" onclick="currentSlide(3)"></span> 
+</div>
+
+
+    <script>
+        let slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+        let i;
+        let slides = document.getElementsByClassName("mySlides");
+        let dots = document.getElementsByClassName("dot");
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        slideIndex++;
+        if (slideIndex > slides.length) {slideIndex = 1}    
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex-1].style.display = "block";
+        dots[slideIndex-1].className += " active";
+        setTimeout(showSlides, 3000);
+        }
+    </script>
 </Layout>
