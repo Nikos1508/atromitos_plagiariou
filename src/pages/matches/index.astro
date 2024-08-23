@@ -1,5 +1,9 @@
 ---
-import Layout from "../../layout/default.astro"
+import Layout from "../../layout/default.astro";
+import { getEntry, getCollection } from "astro:content";
+
+let match = await getCollection("match");
+match = match.map(entry => entry.data);
 ---
 
 <Layout title="Αγώνες">
@@ -13,9 +17,9 @@ import Layout from "../../layout/default.astro"
         <div class="flex flex-row justify-around items-center text-blanched-almond my-4">
             <a href="../matches/1">
                 <div class="animate slide1 flex justify-center items-center border-4 rounded-xl p-3 border-blue-400 bg-sky-600">
-                        <h2 class="text-center text-3xl"> 
-                            ΑΕ Κρήνης - Ατρόμητος Πλαγιαρίου 
-                            <br> (2 - 0) 
+                        <h2 class="text-center text-2xl"> 
+                            {match[0].teams}
+                            <br> {match[0].score}
                             <br> 1η Αγωνιστική
                         </h2> 
                 </div>
@@ -25,7 +29,7 @@ import Layout from "../../layout/default.astro"
                     <h2 class="text-center text-3xl"> 
                         ΑΕ Κρήνης - Ατρόμητος Πλαγιαρίου 
                         <br> (2 - 0) 
-                        <br> 1η Αγωνιστική
+                        <br> 2η Αγωνιστική
                     </h2> 
                 </div>  
             </a>
@@ -34,7 +38,7 @@ import Layout from "../../layout/default.astro"
                 <h2 class="text-center text-3xl"> 
                     ΑΕ Κρήνης - Ατρόμητος Πλαγιαρίου 
                     <br> (2 - 0) 
-                    <br> 1η Αγωνιστική (13/1/2025)
+                    <br> 3η Αγωνιστική (13/1/2025)
                 </h2> 
             </div>
 
