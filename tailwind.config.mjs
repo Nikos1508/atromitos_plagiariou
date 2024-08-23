@@ -4,6 +4,7 @@ export default {
 	theme: {
 		extend: {
 			colors: {
+				'pitch': '#2d9734',
 				'blanched-almond': 	'#FFEBCD',
 				'dropdown-bg': '#5375A9',
 				
