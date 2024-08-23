@@ -1,6 +1,6 @@
 ---
 import Layout from "../../layout/default.astro";
-import { getEntry, getCollection } from "astro:content";
+import { getCollection } from "astro:content";
 
 let match = await getCollection("match");
 match = match.map(entry => entry.data);
@@ -9,7 +9,7 @@ match = match.map(entry => entry.data);
 <Layout title="Αγώνες">
 
     <div>
-        <h2> Β' τοπικό Θεσσαλονίκης, Χ' όμιλος</h2>
+        <h2 class="text-blanched-almond text-5xl flex justify-center"> Β' τοπικό Θεσσαλονίκης, Χος όμιλος</h2>
     </div>
 
 	<div class="mt-8 overflow-hidden">
@@ -23,12 +23,15 @@ match = match.map(entry => entry.data);
                             <br> 1η Αγωνιστική
                         </h2> 
                 </div>
+                <script>
+                    let info = ;
+                </script>
             </a>
             <a href="../matches/2">
                 <div class="animate slide2 flex justify-center items-center border-4 rounded-xl p-3 border-blue-400 bg-sky-600">
                     <h2 class="text-center text-3xl"> 
-                        ΑΕ Κρήνης - Ατρόμητος Πλαγιαρίου 
-                        <br> (2 - 0) 
+                        {match[1].score}
+                        <br> {match[1].score}
                         <br> 2η Αγωνιστική
                     </h2> 
                 </div>  
@@ -118,7 +121,6 @@ match = match.map(entry => entry.data);
         threshold: 0.2
     });
 
-    // Attach the observer to each element
     elements.forEach(element => {
         observer.observe(element);
     });
