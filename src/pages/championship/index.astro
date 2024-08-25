@@ -1,13 +1,12 @@
 ---
 import Layout from "../../layout/default.astro"
-import {getCollection } from "astro:content";
+import {getEntry} from "astro:content";
 
-let championship = await getCollection("championship");
-championship = championship.map(entry => entry.data);
+let championship = (await getEntry("championship", "championship")).data;
 ---
 
 <Layout title="Πρωτάθλημα">
-  {championship}
+  {championship.teams[2]}
     <div>
         <table class="w-full text-2xl font-semibold text-sky-100">
           <tr class="h-20">
