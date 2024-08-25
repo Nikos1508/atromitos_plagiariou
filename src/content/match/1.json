@@ -1,7 +1,7 @@
 {
         "teams": "Ατρόμητος Πλαγιαρίου - Φιλοξενούμενοι",
         "score": "0 - 3",
-        "description": " Blah blah blah blah",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam aliquet metus pellentesque nisi consequat posuere. Vivamus porta nunc vitae elit auctor fermentum. ",
         "date": "27/1/2025",
-        "audio_file": "../../../"
+        "audio_file": "../../../public/music.mp3"
 }

@@ -35,14 +35,23 @@ const match = (await getEntry('match', matchEntry)).data;
     </div>
   </div>
   <div class="flex flex-col justify-between items-center">
-      <div class="bg-amber-600 p-3 flex flex-row w-[57vw]">
-        <div>
-          <audio controls class="">
-            <source src="../../../../public/audio.mp3" type="audio/mpeg">
-          </audio>
-        </div>
-        <div>
-          <p class="text-4xl text-center"> {match.description}</p>
+      <div class="bg-amber-600 p-3 flex flex-row w-[57vw] mb-[5vh] rounded-xl items-center">
+
+        {match.audio_file && 
+          <div class="w-[32vw] flex flex-col items-center">
+            <div>
+              <p class="text-2xl font-semibold"> Ακούστε την πλήρη περιγραφή του αγώνα </p>
+            </div>
+            <div>
+              <audio controls class="w-[30vw] my-3">
+                <source src={match.audio_file} type="audio/mpeg">
+              </audio>
+            </div>
+          </div>
+        }
+
+        <div class="w-[25vw] flex flex-row justify-end">
+          <p class="text-lg w-[20vw] text-justify p-2"> {match.description}</p>
         </div>
       </div>
       <div class="w-[70vw] flex justify-center flex-col items-center">
