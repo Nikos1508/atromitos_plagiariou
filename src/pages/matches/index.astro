@@ -16,17 +16,6 @@ match = match.map(entry => entry.data) as any;
 
         <div class="flex flex-row justify-evenly items-center text-blanched-almond my-4">
 
-            {match[0].teams ||
-                <a href="../matches/1">
-                    <div class="animate slide1 flex justify-center items-center border-4 rounded-xl p-3 border-blue-400 bg-sky-600 w-[30vw]">
-                            <h2 class="text-center text-[24px]"> 
-                                {match[0].teams}
-                                <br> {match[0].score}
-                                <br> 1η Αγωνιστική
-                            </h2> 
-                    </div>
-                </a>
-            }
             {match[0].teams &&
                 <a href="../matches/1">
                     <div class="animate slide1 flex justify-center items-center border-4 rounded-xl p-3 border-blue-400 bg-sky-600 w-[30vw]">
@@ -38,114 +27,263 @@ match = match.map(entry => entry.data) as any;
                     </div>
                 </a>
             }
-            <a href="../matches/2">
-                <div class="animate slide2 flex justify-center items-center border-4 rounded-xl p-2 border-blue-400 bg-sky-600 w-[30vw]">
-                    <h2 class="text-center text-[24px]"> 
-                        {match[1].teams}
-                        <br> {match[1].score}
-                        <br> 2η Αγωνιστική
-                    </h2> 
-                </div>  
-            </a>
-            <a href="../matches/3">
-                <div class="animate slide3 flex justify-center items-center border-4 rounded-xl p-3 border-blue-400 bg-sky-600 w-[30vw]">
-                    <h2 class="text-center text-[24px]"> 
-                        {match[2].teams}
-                        <br> {match[2].score} 
-                        <br> 3η Αγωνιστική (13/1/2025)
-                    </h2> 
-                </div>
-            </a>
-        </div>
 
-        <div class="flex flex-row justify-evenly items-center text-blanched-almond my-4">
-            <a href="../matches/4">
-                <div class="animate slide1 delay1 flex justify-center items-center border-4 rounded-xl p-3 border-blue-400 bg-sky-600 w-[30vw]">
+            {match[1].teams && 
+                <a href="../matches/2">
+                    <div class="animate slide2 flex justify-center items-center border-4 rounded-xl p-2 border-blue-400 bg-sky-600 w-[30vw]">
                         <h2 class="text-center text-[24px]"> 
-                            {match[3].teams}
-                            <br> {match[3].score}
-                            <br> 1η Αγωνιστική
+                            {match[1].teams}
+                            <br> {match[1].score}
+                            <br> 2η Αγωνιστική
                         </h2> 
-                </div>
-            </a>
-            <a href="../matches/5">
-                <div class="animate slide2 delay1 flex justify-center items-center border-4 rounded-xl p-2 border-blue-400 bg-sky-600 w-[30vw]">
-                    <h2 class="text-center text-[24px]"> 
-                        {match[4].teams}
-                        <br> {match[4].score}
-                        <br> 2η Αγωνιστική
-                    </h2> 
-                </div>  
-            </a>
-            <a href="../matches/6">
-                <div class="animate slide3 delay1 flex justify-center items-center border-4 rounded-xl p-3 border-blue-400 bg-sky-600 w-[30vw]">
-                    <h2 class="text-center text-[24px]"> 
-                        {match[5].teams}
-                        <br> {match[5].score} 
-                        <br> 3η Αγωνιστική (13/1/2025)
-                    </h2> 
-                </div>
-            </a>
-        </div>
+                    </div>  
+                </a>
+            }
 
-        <div class="flex flex-row justify-evenly items-center text-blanched-almond my-4">
-            <a href="../matches/7">
-                <div class="animate slide1 delay2 flex justify-center items-center border-4 rounded-xl p-3 border-blue-400 bg-sky-600 w-[30vw]">
+            {match[2].teams && 
+                <a href="../matches/3">
+                    <div class="animate slide3 flex justify-center items-center border-4 rounded-xl p-3 border-blue-400 bg-sky-600 w-[30vw]">
                         <h2 class="text-center text-[24px]"> 
-                            {match[6].teams}
-                            <br> {match[6   ].score}
-                            <br> 1η Αγωνιστική
+                            {match[2].teams}
+                            <br> {match[2].score} 
+                            <br> 3η Αγωνιστική (13/1/2025)
                         </h2> 
-                </div>
-            </a>
-            <a href="../matches/8">
-                <div class="animate slide2 delay2 flex justify-center items-center border-4 rounded-xl p-2 border-blue-400 bg-sky-600 w-[30vw]">
-                    <h2 class="text-center text-[24px]"> 
-                        {match[1].teams}
-                        <br> {match[1].score}
-                        <br> 2η Αγωνιστική
-                    </h2> 
-                </div>  
-            </a>
-            <a href="../matches/9">
-                <div class="animate slide3 delay2 flex justify-center items-center border-4 rounded-xl p-3 border-blue-400 bg-sky-600 w-[30vw]">
-                    <h2 class="text-center text-[24px]"> 
-                        {match[2].teams}
-                        <br> {match[2].score} 
-                        <br> 3η Αγωνιστική (13/1/2025)
-                    </h2> 
-                </div>
-            </a>
-        </div>
+                    </div>
+                </a>
+            }
 
+        </div>
         <div class="flex flex-row justify-evenly items-center text-blanched-almond my-4">
-            <a href="../matches/10">
-                <div class="animate slide1 delay3 flex justify-center items-center border-4 rounded-xl p-3 border-blue-400 bg-sky-600 w-[30vw]">
+            
+            {match[3].teams && 
+                <a href="../matches/4">
+                    <div class="animate slide1 delay1 flex justify-center items-center border-4 rounded-xl p-3 border-blue-400 bg-sky-600 w-[30vw]">
+                            <h2 class="text-center text-[24px]"> 
+                                {match[3].teams}
+                                <br> {match[3].score}
+                                <br> 4η Αγωνιστική
+                            </h2> 
+                    </div>
+                </a>
+            }
+
+            {match[4].teams && 
+                <a href="../matches/5">
+                    <div class="animate slide2 delay1 flex justify-center items-center border-4 rounded-xl p-2 border-blue-400 bg-sky-600 w-[30vw]">
                         <h2 class="text-center text-[24px]"> 
-                            {match[0].teams}
-                            <br> {match[0].score}
-                            <br> 1η Αγωνιστική
+                            {match[4].teams}
+                            <br> {match[4].score}
+                            <br> 5η Αγωνιστική
                         </h2> 
-                </div>
-            </a>
-            <a href="../matches/11">
-                <div class="animate slide2 delay3 flex justify-center items-center border-4 rounded-xl p-2 border-blue-400 bg-sky-600 w-[30vw]">
-                    <h2 class="text-center text-[24px]"> 
-                        {match[1].teams}
-                        <br> {match[1].score}
-                        <br> 2η Αγωνιστική
-                    </h2> 
-                </div>  
-            </a>
-            <a href="../matches/12">
-                <div class="animate slide3 delay3 flex justify-center items-center border-4 rounded-xl p-3 border-blue-400 bg-sky-600 w-[30vw]">
-                    <h2 class="text-center text-[24px]"> 
-                        {match[2].teams}
-                        <br> {match[2].score} 
-                        <br> 3η Αγωνιστική (13/1/2025)
-                    </h2> 
-                </div>
-            </a>
+                    </div>  
+                </a>
+            }
+            {match[5].teams && 
+                <a href="../matches/6">
+                    <div class="animate slide3 delay1 flex justify-center items-center border-4 rounded-xl p-3 border-blue-400 bg-sky-600 w-[30vw]">
+                        <h2 class="text-center text-[24px]"> 
+                            {match[5].teams}
+                            <br> {match[5].score} 
+                            <br> 6η Αγωνιστική (13/1/2025)
+                        </h2> 
+                    </div>
+                </a>
+            }
+
+        </div>
+        <div class="flex flex-row justify-evenly items-center text-blanched-almond my-4">
+
+            {match[6].teams && 
+                <a href="../matches/7">
+                    <div class="animate slide1 delay2 flex justify-center items-center border-4 rounded-xl p-3 border-blue-400 bg-sky-600 w-[30vw]">
+                            <h2 class="text-center text-[24px]"> 
+                                {match[6].teams}
+                                <br> {match[6].score}
+                                <br> 7η Αγωνιστική
+                            </h2> 
+                    </div>
+                </a>
+            }
+
+            {match[7].teams && 
+                <a href="../matches/8">
+                    <div class="animate slide2 delay2 flex justify-center items-center border-4 rounded-xl p-2 border-blue-400 bg-sky-600 w-[30vw]">
+                        <h2 class="text-center text-[24px]"> 
+                            {match[7].teams}
+                            <br> {match[7].score}
+                            <br> 8η Αγωνιστική
+                        </h2> 
+                    </div>  
+                </a>
+            }
+
+            {match[8].teams && 
+                <a href="../matches/9">
+                    <div class="animate slide3 delay2 flex justify-center items-center border-4 rounded-xl p-3 border-blue-400 bg-sky-600 w-[30vw]">
+                        <h2 class="text-center text-[24px]"> 
+                            {match[8].teams}
+                            <br> {match[8].score} 
+                            <br> 9η Αγωνιστική (13/1/2025)
+                        </h2> 
+                    </div>
+                </a>
+            }
+
+        </div>
+        <div class="flex flex-row justify-evenly items-center text-blanched-almond my-4">
+
+            {match[9].teams && 
+                <a href="../matches/10">
+                    <div class="animate slide1 flex justify-center items-center border-4 rounded-xl p-3 border-blue-400 bg-sky-600 w-[30vw]">
+                            <h2 class="text-center text-[24px]"> 
+                                {match[9].teams}
+                                <br> {match[9].score}
+                                <br> 10η Αγωνιστική
+                            </h2> 
+                    </div>
+                </a>
+            }
+
+            {match[10].teams && 
+                <a href="../matches/11">
+                    <div class="animate slide2 flex justify-center items-center border-4 rounded-xl p-2 border-blue-400 bg-sky-600 w-[30vw]">
+                        <h2 class="text-center text-[24px]"> 
+                            {match[10].teams}
+                            <br> {match[10].score}
+                            <br> 11η Αγωνιστική
+                        </h2> 
+                    </div>  
+                </a>
+            }
+
+            {match[11].teams && 
+                <a href="../matches/12">
+                    <div class="animate slide3 flex justify-center items-center border-4 rounded-xl p-3 border-blue-400 bg-sky-600 w-[30vw]">
+                        <h2 class="text-center text-[24px]"> 
+                            {match[11].teams}
+                            <br> {match[11].score} 
+                            <br> 12η Αγωνιστική (13/1/2025)
+                        </h2> 
+                    </div>
+                </a>
+            }
+
+        </div>
+        <div class="flex flex-row justify-evenly items-center text-blanched-almond my-4">
+            
+            {match[12].teams && 
+                <a href="../matches/4">
+                    <div class="animate slide1 flex justify-center items-center border-4 rounded-xl p-3 border-blue-400 bg-sky-600 w-[30vw]">
+                            <h2 class="text-center text-[24px]"> 
+                                {match[12].teams}
+                                <br> {match[12].score}
+                                <br> 13η Αγωνιστική
+                            </h2> 
+                    </div>
+                </a>
+            }
+
+            {match[13].teams && 
+                <a href="../matches/5">
+                    <div class="animate slide2 flex justify-center items-center border-4 rounded-xl p-2 border-blue-400 bg-sky-600 w-[30vw]">
+                        <h2 class="text-center text-[24px]"> 
+                            {match[13].teams}
+                            <br> {match[13].score}
+                            <br> 14η Αγωνιστική
+                        </h2> 
+                    </div>  
+                </a>
+            }
+            {match[14].teams && 
+                <a href="../matches/6">
+                    <div class="animate slide3 flex justify-center items-center border-4 rounded-xl p-3 border-blue-400 bg-sky-600 w-[30vw]">
+                        <h2 class="text-center text-[24px]"> 
+                            {match[14].teams}
+                            <br> {match[14].score} 
+                            <br> 15η Αγωνιστική (13/1/2025)
+                        </h2> 
+                    </div>
+                </a>
+            }
+
+        </div>
+        <div class="flex flex-row justify-evenly items-center text-blanched-almond my-4">
+
+            {match[15].teams && 
+                <a href="../matches/7">
+                    <div class="animate slide1 flex justify-center items-center border-4 rounded-xl p-3 border-blue-400 bg-sky-600 w-[30vw]">
+                            <h2 class="text-center text-[24px]"> 
+                                {match[15].teams}
+                                <br> {match[15].score}
+                                <br> 16η Αγωνιστική
+                            </h2> 
+                    </div>
+                </a>
+            }
+
+            {match[16].teams && 
+                <a href="../matches/8">
+                    <div class="animate slide2 flex justify-center items-center border-4 rounded-xl p-2 border-blue-400 bg-sky-600 w-[30vw]">
+                        <h2 class="text-center text-[24px]"> 
+                            {match[16].teams}
+                            <br> {match[16].score}
+                            <br> 17η Αγωνιστική
+                        </h2> 
+                    </div>  
+                </a>
+            }
+
+            {match[17].teams && 
+                <a href="../matches/9">
+                    <div class="animate slide3 flex justify-center items-center border-4 rounded-xl p-3 border-blue-400 bg-sky-600 w-[30vw]">
+                        <h2 class="text-center text-[24px]"> 
+                            {match[17].teams}
+                            <br> {match[17].score} 
+                            <br> 18η Αγωνιστική (13/1/2025)
+                        </h2> 
+                    </div>
+                </a>
+            }
+
+        </div>
+        <div class="flex flex-row justify-evenly items-center text-blanched-almond my-4">
+
+            {match[18].teams && 
+                <a href="../matches/10">
+                    <div class="animate slide1 flex justify-center items-center border-4 rounded-xl p-3 border-blue-400 bg-sky-600 w-[30vw]">
+                            <h2 class="text-center text-[24px]"> 
+                                {match[18].teams}
+                                <br> {match[18].score}
+                                <br> 19η Αγωνιστική
+                            </h2> 
+                    </div>
+                </a>
+            }
+
+            {match[19].teams && 
+                <a href="../matches/20">
+                    <div class="animate slide2 flex justify-center items-center border-4 rounded-xl p-2 border-blue-400 bg-sky-600 w-[30vw]">
+                        <h2 class="text-center text-[24px]"> 
+                            {match[19].teams}
+                            <br> {match[19].score}
+                            <br> 20η Αγωνιστική
+                        </h2> 
+                    </div>  
+                </a>
+            }
+
+            {match[20].teams && 
+                <a href="../matches/21">
+                    <div class="animate slide3 flex justify-center items-center border-4 rounded-xl p-3 border-blue-400 bg-sky-600 w-[30vw]">
+                        <h2 class="text-center text-[24px]"> 
+                            {match[20].teams}
+                            <br> {match[20].score} 
+                            <br> 21η Αγωνιστική {match[20].date} 
+                        </h2> 
+                    </div>
+                </a>
+            }
+
         </div>
     </div>
 
