@@ -42,10 +42,22 @@ const match = (await getEntry('match', matchEntry)).data;
             <div>
               <p class="text-2xl font-semibold"> Ακούστε την πλήρη περιγραφή του αγώνα </p>
             </div>
-            <div>
-              <audio controls class="w-[30vw] my-3">
-                <source src={match.audio_file} type="audio/mpeg">
-              </audio>
+            <div class="mt-[3vh] w-[32vw] flex flex-row justify-around">
+              <audio id="player" src={match.audio_file}></audio>
+              <div class="flex flex-row justify-evenly items-center w-[15vw]"> 
+                <button onclick="document.getElementById('player').play()">  <div> <i class="fa-solid fa-play fa-2xl"></i> </div> </button> 
+                <button onclick="document.getElementById('player').pause()"> <div> <i class="fa-solid fa-pause fa-2xl"></i> </div> </button> 
+                <div onclick="document.getElementById('player').volume += 0.1" class="vol"> <i class="fa-solid fa-plus fa-2xl"></i> </div> 
+                <div onclick="document.getElementById('player').volume -= 0.1" class="vol"> <i class="fa-solid fa-minus fa-2xl"></i> </div> 
+              </div>
+
+              <div class="progress-container">
+                <div id="progress-bar" class="progress-bar"></div>
+              </div>
+              <div>
+              <label for="valueInput">Set Value (0-100): </label>
+              <input type="number" id="valueInput" min="0" max="100" value="50" onchange="updateProgressBar(this.value)">
+            </div>
             </div>
           </div>
         }
@@ -66,11 +78,21 @@ const match = (await getEntry('match', matchEntry)).data;
   </div>
 </div>
 
+<style>
+button, .vol {
+  color: #0394dd;
+  padding: 5px;
+}
+button:hover, .vol:hover {
+  color: #0394dd;
+  cursor: pointer;
+}
 
+button:focus {
+  color: #ffffff;
+}
 
-
-
-
+</style>
 
 
 
@@ -94,6 +116,8 @@ const match = (await getEntry('match', matchEntry)).data;
   dots[slideIndex-1].className += " active";
   setTimeout(showSlides, 3000);
   }
+
+  
 </script>
 
 
