@@ -12,9 +12,13 @@ const matchesCollection = defineCollection({
 const championshipCollection = defineCollection({
     type: 'data',
     schema: z.object({
+      image: z.array( z.string() ),
       teams: z.array( z.string() ),
       points: z.array( z.string() ),
-      goals: z.array( z.string() )
+      goals: z.array( z.string() ),
+      wins: z.array( z.string() ),
+      draws: z.array( z.string() ),
+      loses: z.array( z.string() )
     }),
   });
 

@@ -6,132 +6,131 @@ let championship = (await getEntry("championship", "championship")).data;
 ---
 
 <Layout title="Πρωτάθλημα">
-  {championship.teams[2]}
     <div>
         <table class="w-full text-2xl font-semibold text-sky-100">
           <tr class="h-20">
-            <th>  </th>
-            <th> Ομάδα </th>
-            <th> Βαθμοί </th>
-            <th> Γκολ </th>
-            <th> Νίκες </th>
-            <th> Ισοπαλίες </th>
-            <th> Ήττες </th>
+            <th class="w-[12vw]">  </th>
+            <th class="w-[30vw]"> Ομάδα </th>
+            <th class="w-[12vw]"> Βαθμοί </th>
+            <th class="w-[12vw]"> Γκολ </th>
+            <th class="w-[12vw]"> Νίκες </th>
+            <th class="w-[12vw]"> Ισοπαλίες </th>
+            <th class="w-[12vw]"> Ήττες </th>
           </tr>
           <tr class="h-20">
-            <td> <img src="/media/mpam-logo.png" height="100px" width="auto"> </td>
-            <td> ΜΠΑ.Μ.</td>
-            <td> 31 </td>
-            <td> 44 - 8 </td>
-            <td> 10 </td>
+            <td> <img src={championship.image[0]} height="80px" width="80px"> </td>
+            <td> {championship.teams[0]} </td>
+            <td> {championship.points[0]} </td>
+            <td> {championship.goals[0]} </td>
+            <td> {championship.wins[0]} </td>
             <td> 1 </td>
             <td> 1 </td>
           </tr>
           <tr class="h-20">
-            <td> <img src="/media/" height="100px" width="auto"> </td>
-            <td> Αναγέννηση Νέων Επιβατών </td>
-            <td> 31 </td>
-            <td>35-13</td>
-            <td>10</td>
+            <td> <img src={championship.image[1]} height="80px" width="80px"> </td>
+            <td> {championship.teams[1]} </td>
+            <td> {championship.points[1]} </td>
+            <td> {championship.goals[1]} </td>
+            <td> {championship.wins[1]} </td>
             <td>1</td>
             <td>1</td>
           </tr>
           <tr class="h-20">
-            <td> <img src="/media/" height="100px" width="auto"> </td>
-            <td> Ατρόμητος Τριαδρίου</td>
-            <td> 30 </td>
-            <td> 43-16 </td>
-            <td> 10 </td>
-            <td> 0 </td>
+            <td> <img src={championship.image[2]} height="80px" width="80px"> </td>
+            <td> {championship.teams[2]} </td>
+            <td> {championship.points[2]} </td>
+            <td> {championship.goals[2]} </td>
+            <td> {championship.wins[2]} </td>
+            <td> {championship.wins[2]} </td>
             <td> 2 </td>
           </tr>
           <tr class="h-20">
-            <td> <img src="/media/" height="100px" width="auto"> </td>
-            <td> Μ.Αλέξανδρος Θεσσαλονίκης </td>
-            <td> 25 </td>
-            <td> 37-16 </td>
-            <td> 8 </td>
+            <td> <img src={championship.image[3]} height="80px" width="80px"> </td>
+            <td> {championship.teams[3]} </td>
+            <td> {championship.points[3]} </td>
+            <td> {championship.goals[3]} </td>
+            <td> {championship.wins[3]} </td>
             <td> 1 </td>
             <td> 3 </td>
           </tr>
           <tr class="h-20">
-            <td> <img src="/media/" height="100px" width="auto"> </td>
-            <td> Αστέρας Ραιδεστού </td>
-            <td> 25 </td>
-            <td> 26-11 </td>
-            <td> 8 </td>
+            <td> <img src={championship.image[4]} height="80px" width="80px"> </td>
+            <td> {championship.teams[4]} </td>
+            <td> {championship.points[4]} </td>
+            <td> {championship.goals[4]} </td>
+            <td> {championship.wins[4]} </td>
             <td> 1 </td>
             <td> 3 </td>
           </tr>
           <tr class="h-20">
-            <td> <img src="/media/" height="100px" width="auto"> </td>
-            <td> Σκίουροι </td>
-            <td> 21 </td>
-            <td> 28-16 </td>
-            <td> 7 </td>
+            <td> <img src={championship.image[5]} height="80px" width="80px"> </td>
+            <td> {championship.teams[5]} </td>
+            <td> {championship.points[5]} </td>
+            <td> {championship.goals[5]} </td>
+            <td> {championship.wins[5]} </td>
             <td> 0 </td>
             <td> 5 </td>
           </tr>
           <tr class="h-20">
-            <td> <img src="/media/" height="100px" width="auto"> </td>
-            <td> ΑΕ Κρήνης </td>
-            <td> 20 </td>
-            <td> 26-14 </td>
-            <td> 6 </td>
+            <td> <img src={championship.image[6]} height="80px" width="80px"> </td>
+            <td> {championship.teams[6]} </td>
+            <td> {championship.points[6]} </td>
+            <td> {championship.goals[6]} </td>
+            <td> {championship.wins[6]} </td>
             <td> 2 </td>
             <td> 4 </td>
           </tr>
           <tr class="h-20">
-            <td> <img src="/media/" height="100px" width="auto"> </td>
-            <td> Ατρόμητος Πλαγιαρίου </td>
-            <td> 16 </td>
-            <td> 20 - 28 </td>
-            <td> 5 </td>
+            <td> <img src={championship.image[7]} height="80px" width="80px"> </td>
+            <td> {championship.teams[7]} </td>
+            <td> {championship.points[7]} </td>
+            <td> {championship.goals[7]} </td>
+            <td> {championship.wins[7]} </td>
             <td> 1 </td>
             <td> 6 </td>
           </tr>
           <tr class="h-20">
-            <td> <img src="/media/" height="100px" width="auto"> </td>
-            <td> Αργοναύτης Καλαμαριάς </td>
-            <td> 10 </td>
-            <td> 15-24 </td>
-            <td> 3 </td>
+            <td> <img src={championship.image[8]} height="80px" width="80px"> </td>
+            <td> {championship.teams[8]} </td>
+            <td> {championship.points[8]} </td>
+            <td> {championship.goals[8]} </td>
+            <td> {championship.wins[8]} </td>
             <td> 1 </td>
             <td> 8 </td>
           </tr>
           <tr class="h-20">
-            <td> <img src="/media/" height="100px" width="auto"> </td>
-            <td> Αριστοτέλης </td>
-            <td> 10 </td>
-            <td> 18-50 </td>
-            <td> 2 </td>
+            <td> <img src={championship.image[9]} height="80px" width="80px"> </td>
+            <td> {championship.teams[9]} </td>
+            <td> {championship.points[9]} </td>
+            <td> {championship.goals[9]} </td>
+            <td> {championship.wins[9]} </td>
             <td> 1 </td>
             <td> 9 </td>
           </tr>
           <tr class="h-20">
-            <td> <img src="/media/" height="100px" width="auto"> </td>
-            <td> Ιταλική Ακαδημία </td>
-            <td> 4 </td>
-            <td> 13-30 </td>
-            <td> 0 </td>
+            <td> <img src={championship.image[10]} height="80px" width="80px"> </td>
+            <td> {championship.teams[10]} </td>
+            <td> {championship.points[10]} </td>
+            <td> {championship.goals[10]} </td>
+            <td> {championship.wins[10]} </td>
             <td> 4 </td>
             <td> 8 </td>
           </tr>
           <tr class="h-20">
-            <td> <img src="/media/" height="100px" width="auto"> </td>
-            <td> Κεραυνός Μονοπηγάδου </td>
-            <td> 4 </td>
-            <td> 11-46 </td>
-            <td>  1 </td>
+            <td> <img src={championship.image[11]} height="80px" width="80px"> </td>
+            <td> {championship.teams[11]} </td>
+            <td> {championship.points[11]} </td>
+            <td> {championship.goals[11]} </td>
+            <td> {championship.wins[11]} </td>
             <td> 1 </td>
             <td> 10 </td>
           </tr>
           <tr class="h-20">
-            <td> <img src="/media/" height="100px" width="auto"> </td>
-            <td> Ατρόμητος Αγ.Αντωνίου </td>
-            <td> 2 </td>
-            <td> 10-52 </td>
-            <td>  0 </td>
+            <td> <img src={championship.image[12]} height="80px" width="80px"> </td>
+            <td> {championship.teams[12]} </td>
+            <td> {championship.points[12]} </td>
+            <td> {championship.goals[12]} </td>
+            <td> {championship.wins[12]} </td>
             <td> 2 </td>
             <td> 10 </td>
           </tr>
