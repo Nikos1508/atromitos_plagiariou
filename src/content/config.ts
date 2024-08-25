@@ -4,7 +4,8 @@ const matchesCollection = defineCollection({
     type: 'content',
     schema: z.object({
         teams: z.string(),
-        score: z.string()
+        score: z.string(),
+        description: z.string()
     }),
   });
 
