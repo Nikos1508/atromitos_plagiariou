@@ -5,7 +5,8 @@ const matchesCollection = defineCollection({
     schema: z.object({
         teams: z.string(),
         score: z.string(),
-        description: z.string()
+        description: z.string(),
+        audio_file: z.string()
     }),
   });
 
