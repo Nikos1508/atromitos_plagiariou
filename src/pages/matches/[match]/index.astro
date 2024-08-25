@@ -54,10 +54,8 @@ const match = (await getEntry('match', matchEntry)).data;
               <div class="progress-container">
                 <div id="progress-bar" class="progress-bar"></div>
               </div>
-              <div>
-              <label for="valueInput">Set Value (0-100): </label>
-              <input type="number" id="valueInput" min="0" max="100" value="50" onchange="updateProgressBar(this.value)">
-            </div>
+              <span id='time'> we </span>
+
             </div>
           </div>
         }
@@ -81,15 +79,35 @@ const match = (await getEntry('match', matchEntry)).data;
 <style>
 button, .vol {
   color: #0394dd;
-  padding: 5px;
+  font-size: 18px
 }
-button:hover, .vol:hover {
+button:hover{
   color: #0394dd;
   cursor: pointer;
 }
 
-button:focus {
+button:focus, .vol:hover  {
   color: #ffffff;
+  cursor: pointer;
+}
+.progress-container {
+  width: 80%;
+  background-color: #e0e0e0;
+  border-radius: 25px;
+  margin: 10px 0;
+  height: 30px;
+}
+/* Audio Player */
+.progress-bar {
+  height: 100%;
+  width: 0%;
+  background-color: #005198;
+  border-radius: 25px;
+  text-align: center;
+  line-height: 30px;
+  color: white;
+  font-weight: bold;
+  transition: width 0.5s ease-in-out;
 }
 
 </style>
@@ -117,7 +135,26 @@ button:focus {
   setTimeout(showSlides, 3000);
   }
 
-  
+
+//Volume progress bar
+function updateProgressBar(value) {
+  const progressBar = document.getElementById('progress-bar');
+  progressBar.style.width = value + '%';
+  progressBar.innerText = value + '%';
+}
+setInterval(update, 800)
+function update() {
+  updateProgressBar(Math.round((document.getElementById('player').volume)*100));
+
+};
+
+
+
+//Time progress bar
+function time() {
+  document.getElementById('time').innerHTML = document.getElementById('player').currentTime
+}
+setInterval(time, 1000)
 </script>
 
 
