@@ -35,7 +35,7 @@ const match = (await getEntry('match', matchEntry)).data;
     </div>
   </div>
   <div class="flex flex-col justify-between items-center">
-      <div class="bg-amber-600 p-3 flex flex-row w-[57vw] mb-[5vh] rounded-xl items-center">
+      <div class="bg-blue-300 p-3 flex flex-row w-[57vw] mb-[5vh] rounded-xl items-center justify-center">
 
         {match.audio_file && 
           <div class="w-[40vw] flex flex-col items-center">
@@ -60,7 +60,7 @@ const match = (await getEntry('match', matchEntry)).data;
               </div>
             </div>
 
-            <div class="flex flex-row w-[35vw] items-center justify-start">
+            <div class="flex flex-row w-[35vw] items-center justify-start mt-3">
               <div class="time-controls-container flex flex-row w-[20vw] items-center">
                 <div id="time-dot" class="p-1.5 bg-blue-600 rounded-full"></div>
                 <div id="time-controls-container" class="time-progress-bar"></div>
@@ -254,8 +254,9 @@ function time() {
 
   document.getElementById('time').innerHTML = `${hours}:${minutes}:${seconds} / ${hoursDuration}:${minDuration}:${secDuration}`;
 
-  const progressBar = document.getElementById('time-progress-bar');
-  progressBar.style.width = Math.round((100/duration)*sec) + '%';
+  const timeLine = document.getElementsByClassName('time-progress-bar');
+  timeLine.style.width = "20%"
+  // (Math.round((100/duration)*sec))*10 + '%';
 }
 
 setInterval(time, 1000);
