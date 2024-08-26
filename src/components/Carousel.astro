@@ -6,7 +6,7 @@ let { image1, image2, image3, image4, image5} = Astro.props
 
     {image1 &&
         <div class="mySlides fade">
-            <div class="numbertext">1 / 5</div>
+            <div class="numbertext"> 1 / 5 </div>
             {image1}
         </div>
     }
@@ -45,39 +45,13 @@ let { image1, image2, image3, image4, image5} = Astro.props
   margin: auto;
 }
 
-.prev, .next {
-  cursor: pointer;
-  position: absolute;
-  top: 50%;
-  width: auto;
-  margin-top: -22px;
-  padding: 16px;
-  color: white;
-  font-weight: bold;
-  font-size: 18px;
-  transition: 0.6s ease;
-  border-radius: 0 3px 3px 0;
-  user-select: none;
-}
-
-.next {
-  right: 0;
-  border-radius: 3px 0 0 3px;
-}
-
-.prev:hover, .next:hover {
-  background-color: rgba(0,0,0,0.8);
-}
-
 .numbertext {
   color: #f2f2f2;
   font-size: 12px;
   padding: 8px 12px;
   position: absolute;
-  top: 0;
-}
-.active, .circle:hover {
-  background-color: #717171;
+  left: 50%;
+  top: 0%
 }
 
 .fade {
