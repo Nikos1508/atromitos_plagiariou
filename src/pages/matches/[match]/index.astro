@@ -38,11 +38,11 @@ const match = (await getEntry('match', matchEntry)).data;
       <div class="bg-amber-600 p-3 flex flex-row w-[57vw] mb-[5vh] rounded-xl items-center">
 
         {match.audio_file && 
-          <div class="w-[32vw] flex flex-col items-center">
-            <div>
+          <div class="w-[40vw] flex flex-col items-center">
+            <div class="flex items-center w-[30vw]">
               <p class="text-2xl font-semibold"> Ακούστε την πλήρη περιγραφή του αγώνα </p>
             </div>
-            <div class="mt-[3vh] w-[32vw] flex flex-row justify-around">
+            <div class="mt-[3vh] w-[30vw] flex flex-row justify-around items-center">
               <audio id="player" src={match.audio_file}></audio>
               <div class="flex flex-row justify-evenly items-center w-[15vw]"> 
                 <button onclick="document.getElementById('player').play()">  <div> <i class="fa-solid fa-play fa-2xl"></i> </div> </button> 
@@ -52,15 +52,19 @@ const match = (await getEntry('match', matchEntry)).data;
               </div>
 
               <div class="audio-controls-container">
-                <div id="audio-controls-container" class="audio-progress-bar"></div>
+                <div id="audio-controls-container" class="audio-progress-bar flex items-center justify-center"></div>
+              </div>
+              <div class="ml-1">
+                <i class="fa-solid fa-volume-off fa-2xl"></i>
               </div>
             </div>
 
-            <div class="flex flex-row w-[30vw] items-center justify-start">
-              <div class="time-controls-container flex flex-row">
-                <div id="time-progress-bar" class="time-progress-bar"></div>
+            <div class="flex flex-row w-[35vw] items-center justify-start">
+              <div class="time-controls-container flex flex-row w-[20vw] items-center">
+                <div id="time-dot" class="p-1.5 bg-blue-600 rounded-full"></div>
+                <div id="time-controls-container" class="time-progress-bar"></div>
               </div>
-              <div id='time' class="ml-2"> 0:00:00 </div>
+              <div id='time' class="ml-2 text-sm"> 0:00:00 </div>
             </div>
 
           </div>
@@ -97,11 +101,11 @@ button:focus, .vol:hover  {
   cursor: pointer;
 }
 .audio-controls-container {
-  width: 80%;
+  width: 7cm;
   background-color: #e0e0e0;
   border-radius: 25px;
   margin: 10px 0;
-  height: 30px;
+  height: 25px;
 }
 /* Audio Player */
 .audio-progress-bar, .time-progress-bar {
@@ -118,7 +122,7 @@ button:focus, .vol:hover  {
 
 
 .time-controls-container {
-  width: 80%;
+  width: 75%;
   background-color: #e0e0e0;
   border-radius: 25px;
   margin: 10px 0;
@@ -170,16 +174,25 @@ function time() {
   let minutes = "";
   let min = 0;
   let hours = 0
+  let secDuration = 0;
   let minDuration = 0;
+  let hoursDuration = 0;
 
   let sec = Math.round(document.getElementById('player').currentTime);
   let duration = Math.round(document.getElementById('player').duration);
 
-
   if (duration >= 60) {
     minDuration = Math.floor(duration/60);
-    console
+    secDuration = duration - (minDuration*60);
   }
+  if (minDuration <= 9) {
+    minDuration = "0"+minDuration;
+  }
+  if (minDuration >= 60) {
+    hoursDuration = Math.floor(minDuration/60);
+    minDuration = minDuration - (hoursDuration*60);
+  }
+
 
   if (sec >= 60) {
     sec = sec - 60;
@@ -208,11 +221,24 @@ function time() {
     seconds = sec;
   }
 
-  document.getElementById('time').innerHTML = `${hours}:${minutes}:${seconds} / ${duration}`;
+  if (sec >= duration){
+    sec = duration;
+  }
+
+  document.getElementById('time').innerHTML = `${hours}:${minutes}:${seconds} / ${hoursDuration}:${minDuration}:${secDuration}`;
 }
 
-setInterval(time, 1000)
+function updateTimeLine(value) {
+  const progressBar = document.getElementById('time-dot');
+  progressBar.style.marginRight = value + 'vw';
+}
 
+function duration() {
+  updateTimeLine(Math.round((100/duration)*sec));
+};
+
+setInterval(time, 1000)
+setInterval(duration, 1000)
 </script>
 
 
