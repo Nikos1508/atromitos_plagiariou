@@ -60,7 +60,7 @@ const match = (await getEntry('match', matchEntry)).data;
               <div class="time-controls-container flex flex-row">
                 <div id="time-progress-bar" class="time-progress-bar"></div>
               </div>
-              <div id='time' class="ml-2"> we </div>
+              <div id='time' class="ml-2"> 0:00:00 </div>
             </div>
 
           </div>
@@ -162,24 +162,57 @@ function update() {
 
 };
 
-//Time progress bar
-let sec = 0;
-let min = 0;
-let hours = 0;
-const progressBar = document.getElementById('time-controls-container');
 
+
+//Time progress bar
 function time() {
-  if (sec < 9) {
-    sec = Math.round(document.getElementById('player').currentTime);
-    document.getElementById('time').innerHTML = "0"+sec;
-  } else {
-    sec = Math.round(document.getElementById('player').currentTime);
-    document.getElementById('time').innerHTML = sec;
+  let seconds = "";
+  let minutes = "";
+  let min = 0;
+  let hours = 0
+  let minDuration = 0;
+
+  let sec = Math.round(document.getElementById('player').currentTime);
+  let duration = Math.round(document.getElementById('player').duration);
+
+
+  if (duration >= 60) {
+    minDuration = Math.floor(duration/60);
+    console
   }
 
-  progressBar.style.width = sec + '%';
+  if (sec >= 60) {
+    sec = sec - 60;
+    min++;
+  }
+  if (min >= 60) {
+    min = min - 60;
+    hours++;
+  }
+
+  if (min <= 0) {
+    minutes = `0${min}`
+  }
+  if (min <= 9) {
+    minutes = `0${min}`
+  }
+  if (min >= 10 && min <=59) {
+    minutes = sec;
+  }
+
+
+  if (sec <= 9) {
+    seconds = `0${sec}`
+  }
+  if (sec >= 10 && sec <=59) {
+    seconds = sec;
+  }
+
+  document.getElementById('time').innerHTML = `${hours}:${minutes}:${seconds} / ${duration}`;
 }
+
 setInterval(time, 1000)
+
 </script>
 
 
