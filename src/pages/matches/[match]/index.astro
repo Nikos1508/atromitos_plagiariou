@@ -51,12 +51,18 @@ const match = (await getEntry('match', matchEntry)).data;
                 <div onclick="document.getElementById('player').volume -= 0.1" class="vol"> <i class="fa-solid fa-minus fa-2xl"></i> </div> 
               </div>
 
-              <div class="progress-container">
-                <div id="progress-bar" class="progress-bar"></div>
+              <div class="audio-controls-container">
+                <div id="audio-controls-container" class="audio-progress-bar"></div>
               </div>
-              <span id='time'> we </span>
-
             </div>
+
+            <div class="flex flex-row w-[30vw] items-center justify-start">
+              <div class="time-controls-container flex flex-row">
+                <div id="time-progress-bar" class="time-progress-bar"></div>
+              </div>
+              <div id='time' class="ml-2"> we </div>
+            </div>
+
           </div>
         }
 
@@ -90,7 +96,7 @@ button:focus, .vol:hover  {
   color: #ffffff;
   cursor: pointer;
 }
-.progress-container {
+.audio-controls-container {
   width: 80%;
   background-color: #e0e0e0;
   border-radius: 25px;
@@ -98,7 +104,7 @@ button:focus, .vol:hover  {
   height: 30px;
 }
 /* Audio Player */
-.progress-bar {
+.audio-progress-bar, .time-progress-bar {
   height: 100%;
   width: 0%;
   background-color: #005198;
@@ -110,6 +116,14 @@ button:focus, .vol:hover  {
   transition: width 0.5s ease-in-out;
 }
 
+
+.time-controls-container {
+  width: 80%;
+  background-color: #e0e0e0;
+  border-radius: 25px;
+  margin: 10px 0;
+  height: 10px;
+}
 </style>
 
 
@@ -138,7 +152,7 @@ button:focus, .vol:hover  {
 
 //Volume progress bar
 function updateProgressBar(value) {
-  const progressBar = document.getElementById('progress-bar');
+  const progressBar = document.getElementById('audio-controls-container');
   progressBar.style.width = value + '%';
   progressBar.innerText = value + '%';
 }
@@ -148,11 +162,22 @@ function update() {
 
 };
 
-
-
 //Time progress bar
+let sec = 0;
+let min = 0;
+let hours = 0;
+const progressBar = document.getElementById('time-controls-container');
+
 function time() {
-  document.getElementById('time').innerHTML = document.getElementById('player').currentTime
+  if (sec < 9) {
+    sec = Math.round(document.getElementById('player').currentTime);
+    document.getElementById('time').innerHTML = "0"+sec;
+  } else {
+    sec = Math.round(document.getElementById('player').currentTime);
+    document.getElementById('time').innerHTML = sec;
+  }
+
+  progressBar.style.width = sec + '%';
 }
 setInterval(time, 1000)
 </script>
