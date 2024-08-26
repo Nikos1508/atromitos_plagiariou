@@ -42,9 +42,9 @@ const match = (await getEntry('match', matchEntry)).data;
             <div class="flex items-center w-[30vw]">
               <p class="text-2xl font-semibold"> Ακούστε την πλήρη περιγραφή του αγώνα </p>
             </div>
-            <div class="mt-[3vh] w-[30vw] flex flex-row justify-around items-center">
+            <div class="mt-[3vh] w-[35vw] flex flex-row justify-around items-center">
               <audio id="player" src={match.audio_file}></audio>
-              <div class="flex flex-row justify-evenly items-center w-[15vw]"> 
+              <div class="flex flex-row justify-evenly items-center w-[20vw]"> 
                 <button onclick="document.getElementById('player').play()">  <div> <i class="fa-solid fa-play fa-2xl"></i> </div> </button> 
                 <button onclick="document.getElementById('player').pause()"> <div> <i class="fa-solid fa-pause fa-2xl"></i> </div> </button> 
                 <div onclick="document.getElementById('player').volume += 0.1" class="vol"> <i class="fa-solid fa-plus fa-2xl"></i> </div> 
@@ -54,8 +54,9 @@ const match = (await getEntry('match', matchEntry)).data;
               <div class="audio-controls-container">
                 <div id="audio-controls-container" class="audio-progress-bar flex items-center justify-center"></div>
               </div>
-              <div class="ml-1">
-                <i class="fa-solid fa-volume-off fa-2xl"></i>
+
+              <div class="ml-1 p-1">
+                <i id="volume-icon" class="fas"></i>
               </div>
             </div>
 
@@ -101,14 +102,14 @@ button:focus, .vol:hover  {
   cursor: pointer;
 }
 .audio-controls-container {
-  width: 7cm;
+  width: 20vw;
   background-color: #e0e0e0;
   border-radius: 25px;
   margin: 10px 0;
   height: 25px;
 }
 /* Audio Player */
-.audio-progress-bar, .time-progress-bar {
+.audio-progress-bar {
   height: 100%;
   width: 0%;
   background-color: #005198;
@@ -119,7 +120,17 @@ button:focus, .vol:hover  {
   font-weight: bold;
   transition: width 0.5s ease-in-out;
 }
-
+.time-progress-bar {
+  height: 100%;
+  width: 0%;
+  background-color: #005198;
+  border-radius: 25px;
+  text-align: center;
+  line-height: 30px;
+  color: white;
+  font-weight: bold;
+  transition: width 0.5s ease-in-out;
+}
 
 .time-controls-container {
   width: 75%;
@@ -153,18 +164,34 @@ button:focus, .vol:hover  {
   setTimeout(showSlides, 3000);
   }
 
-
-//Volume progress bar
 function updateProgressBar(value) {
   const progressBar = document.getElementById('audio-controls-container');
   progressBar.style.width = value + '%';
   progressBar.innerText = value + '%';
+  if (value === 0) {
+    progressBar.innerText = "";
+  }
+
+  const volumeIcon = document.getElementById('volume-icon');
+
+  if (value === 0) {
+    volumeIcon.className = 'fas fa-volume-off fa-2xl';
+  } else if (value <= 40) {
+    volumeIcon.className = 'fas fa-volume-down fa-2xl';
+  } else if (value >= 50) {
+    volumeIcon.className = 'fas fa-volume-up fa-2xl';
+  } else {
+    volumeIcon.className = '';
+  }
 }
+
 setInterval(update, 800)
 function update() {
   updateProgressBar(Math.round((document.getElementById('player').volume)*100));
 
 };
+
+
 
 
 
@@ -226,19 +253,12 @@ function time() {
   }
 
   document.getElementById('time').innerHTML = `${hours}:${minutes}:${seconds} / ${hoursDuration}:${minDuration}:${secDuration}`;
+
+  const progressBar = document.getElementById('time-progress-bar');
+  progressBar.style.width = Math.round((100/duration)*sec) + '%';
 }
 
-function updateTimeLine(value) {
-  const progressBar = document.getElementById('time-dot');
-  progressBar.style.marginRight = value + 'vw';
-}
-
-function duration() {
-  updateTimeLine(Math.round((100/duration)*sec));
-};
-
-setInterval(time, 1000)
-setInterval(duration, 1000)
+setInterval(time, 1000);
 </script>
 
 
