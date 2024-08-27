@@ -3,6 +3,7 @@ import Layout from "../../layout/default.astro";
 import { getCollection } from "astro:content";
 
 let match = await getCollection("match");
+match.sort((a, b) => parseInt(a.id) - parseInt(b.id))
 match = match.map(entry => entry.data) as any;
 ---
 
@@ -28,13 +29,13 @@ match = match.map(entry => entry.data) as any;
                 </a>
             }
 
-            {match[11].teams && 
+            {match[1].teams && 
                 <a href="../matches/12">
                     <div class="animate slide2 flex justify-center items-center border-4 rounded-xl p-3 border-blue-400 bg-sky-600 w-[45vw]">
                         <h2 class="text-center text-[24px]"> 
-                            {match[11].teams}
-                            <br> {match[11].score} 
-                            <br> 2η Αγωνιστική {match[11].date} 
+                            {match[1].teams}
+                            <br> {match[1].score} 
+                            <br> 2η Αγωνιστική {match[1].date} 
                         </h2> 
                     </div>
                 </a>
@@ -43,25 +44,25 @@ match = match.map(entry => entry.data) as any;
 
         <div class="flex flex-row justify-evenly items-center text-blanched-almond my-5">
 
-            {match[14].teams && 
+            {match[2].teams && 
                 <a href="../matches/6">
                     <div class="animate slide1 flex justify-center items-center border-4 rounded-xl p-3 border-blue-400 bg-sky-600 w-[45vw]">
                         <h2 class="text-center text-[24px]"> 
-                            {match[14].teams}
-                            <br> {match[14].score} 
-                            <br> 3η Αγωνιστική {match[14].date} 
+                            {match[2].teams}
+                            <br> {match[2].score} 
+                            <br> 3η Αγωνιστική {match[2].date} 
                         </h2> 
                     </div>
                 </a>
             }
             
-            {match[15].teams && 
+            {match[3].teams && 
                 <a href="../matches/7">
                     <div class="animate slide2 flex justify-center items-center border-4 rounded-xl p-3 border-blue-400 bg-sky-600 w-[45vw]">
                             <h2 class="text-center text-[24px]"> 
-                                {match[15].teams}
-                                <br> {match[15].score}
-                                <br> 4η Αγωνιστική
+                                {match[3].teams}
+                                <br> {match[3].score}
+                                <br> 4η Αγωνιστική {match[3].date}
                             </h2> 
                     </div>
                 </a>
@@ -73,22 +74,22 @@ match = match.map(entry => entry.data) as any;
             {match[16].teams && 
                 <a href="../matches/8">
                     <div class="animate slide2 flex justify-center items-center border-4 rounded-xl p-2 border-blue-400 bg-sky-600 w-[45vw]">
-                        <h2 class="text-center text-[24px]"> 
-                            <div class="text-[23px]"> {match[16].teams} </div>
-                            <br> {match[16].score}
-                            <br> 5η Αγωνιστική
+                        <h2 class="text-center text-[23px] my-2"> 
+                            {match[4].teams}
+                            <br> {match[4].score} 0 - 1
+                            <br> 5η Αγωνιστική {match[4].date}
                         </h2> 
                     </div>  
                 </a>
             }
 
-            {match[3].teams && 
+            {match[5].teams && 
                 <a href="../matches/4">
                     <div class="flex justify-center items-center border-4 rounded-xl p-3 border-blue-400 bg-sky-600 w-[45vw]">
                             <h2 class="text-center text-[24px]"> 
-                                {match[3].teams}
-                                <br> {match[3].score}
-                                <br> 4η Αγωνιστική
+                                {match[5].teams}
+                                <br> {match[5].score}
+                                <br> 4η Αγωνιστική {match[5].date}
                             </h2> 
                     </div>
                 </a>
@@ -103,7 +104,7 @@ match = match.map(entry => entry.data) as any;
                             <h2 class="text-center text-[24px]"> 
                                 {match[6].teams}
                                 <br> {match[6].score}
-                                <br> 7η Αγωνιστική
+                                <br> 7η Αγωνιστική {match[6].score}
                             </h2> 
                     </div>
                 </a>

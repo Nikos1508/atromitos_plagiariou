@@ -13,17 +13,26 @@ const matchesCollection = defineCollection({
 const championshipCollection = defineCollection({
     type: 'data',
     schema: z.object({
-      image: z.array( z.string() ),
-      teams: z.array( z.string() ),
-      points: z.array( z.string() ),
-      goals: z.array( z.string() ),
-      wins: z.array( z.string() ),
-      draws: z.array( z.string() ),
-      loses: z.array( z.string() )
+      positions: z.array( z.string() )
     }),
   });
+  
+const teamsCollection = defineCollection({
+  type: 'data',
+  schema: z.object({
+    image:  z.string(),
+    team:   z.string(),
+    points: z.string(),
+    goals:  z.string(),
+    wins:   z.string(),
+    draws:  z.string(),
+    loses:  z.string()
+  }),
+});
+
 
   export const collections = {
     'match': matchesCollection,
-    'championship': championshipCollection
+    'championship': championshipCollection,
+    'teams': teamsCollection
   };

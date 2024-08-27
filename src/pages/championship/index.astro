@@ -3,139 +3,41 @@ import Layout from "../../layout/default.astro"
 import {getEntry} from "astro:content";
 
 let championship = (await getEntry("championship", "championship")).data;
+
+const teams = await Promise.all(championship.positions.map(
+  async (teams: string) => (await getEntry('teams', teams)).data)
+)
+console.log(teams)
 ---
 
 <Layout title="Πρωτάθλημα">
-    <div>
-        <table class="w-full text-2xl font-semibold text-sky-100">
+  <div>
+    <table class="w-full text-2xl font-semibold text-sky-100">
+      <tr class="h-20">
+        <th class="w-[12vw]">           </th>
+        <th class="w-[30vw]"> Ομάδα     </th>
+        <th class="w-[12vw]"> Βαθμοί    </th>
+        <th class="w-[12vw]"> Γκολ      </th>
+        <th class="w-[12vw]"> Νίκες     </th>
+        <th class="w-[12vw]"> Ισοπαλίες </th>
+        <th class="w-[12vw]"> Ήττες     </th>
+      </tr>
+      {teams.map(
+        team => (
           <tr class="h-20">
-            <th class="w-[12vw]">           </th>
-            <th class="w-[30vw]"> Ομάδα     </th>
-            <th class="w-[12vw]"> Βαθμοί    </th>
-            <th class="w-[12vw]"> Γκολ      </th>
-            <th class="w-[12vw]"> Νίκες     </th>
-            <th class="w-[12vw]"> Ισοπαλίες </th>
-            <th class="w-[12vw]"> Ήττες     </th>
+            <td class="text-center border-t-[3px] border-solid "> <img src={team.image} height="80px" width="80px"> </td>
+            <td> {team.team} </td>
+            <td> {team.points} </td>
+            <td> {team.goals} </td>
+            <td> {team.wins} </td>
+            <td> {team.draws} </td>
+            <td> {team.loses} </td>
           </tr>
-          <tr class="h-20">
-            <td> <img src={championship.image[0]} height="80px" width="80px"> </td>
-            <td> {championship.teams[0]} </td>
-            <td> {championship.points[0]} </td>
-            <td> {championship.goals[0]} </td>
-            <td> {championship.wins[0]} </td>
-            <td> {championship.draws[0]} </td>
-            <td> {championship.loses[0]} </td>
-          </tr>
-          <tr class="h-20">
-            <td> <img src={championship.image[1]} height="80px" width="80px"> </td>
-            <td> {championship.teams[1]} </td>
-            <td> {championship.points[1]} </td>
-            <td> {championship.goals[1]} </td>
-            <td> {championship.wins[1]} </td>
-            <td> {championship.draws[1]} </td>
-            <td> {championship.loses[1]} </td>
-          </tr>
-          <tr class="h-20">
-            <td> <img src={championship.image[2]} height="80px" width="80px"> </td>
-            <td> {championship.teams[2]} </td>
-            <td> {championship.points[2]} </td>
-            <td> {championship.goals[2]} </td>
-            <td> {championship.wins[2]} </td>
-            <td> {championship.draws[2]} </td>
-            <td> {championship.loses[2]} </td>
-          </tr>
-          <tr class="h-20">
-            <td> <img src={championship.image[3]} height="80px" width="80px"> </td>
-            <td> {championship.teams[3]} </td>
-            <td> {championship.points[3]} </td>
-            <td> {championship.goals[3]} </td>
-            <td> {championship.wins[3]} </td>
-            <td> {championship.draws[3]} </td>
-            <td> {championship.loses[3]} </td>
-          </tr>
-          <tr class="h-20">
-            <td> <img src={championship.image[4]} height="80px" width="80px"> </td>
-            <td> {championship.teams[4]} </td>
-            <td> {championship.points[4]} </td>
-            <td> {championship.goals[4]} </td>
-            <td> {championship.wins[4]} </td>
-            <td> {championship.draws[4]} </td>
-            <td> {championship.loses[4]} </td>
-          </tr>
-          <tr class="h-20">
-            <td> <img src={championship.image[5]} height="80px" width="80px"> </td>
-            <td> {championship.teams[5]} </td>
-            <td> {championship.points[5]} </td>
-            <td> {championship.goals[5]} </td>
-            <td> {championship.wins[5]} </td>
-            <td> {championship.draws[5]} </td>
-            <td> {championship.loses[5]} </td>
-          </tr>
-          <tr class="h-20">
-            <td> <img src={championship.image[6]} height="80px" width="80px"> </td>
-            <td> {championship.teams[6]} </td>
-            <td> {championship.points[6]} </td>
-            <td> {championship.goals[6]} </td>
-            <td> {championship.wins[6]} </td>
-            <td> {championship.draws[6]} </td>
-            <td> {championship.loses[6]} </td>
-          </tr>
-          <tr class="h-20">
-            <td> <img src={championship.image[7]} height="80px" width="80px"> </td>
-            <td> {championship.teams[7]} </td>
-            <td> {championship.points[7]} </td>
-            <td> {championship.goals[7]} </td>
-            <td> {championship.wins[7]} </td>
-            <td> {championship.draws[7]} </td>
-            <td> {championship.loses[7]} </td>
-          </tr>
-          <tr class="h-20">
-            <td> <img src={championship.image[8]} height="80px" width="80px"> </td>
-            <td> {championship.teams[8]} </td>
-            <td> {championship.points[8]} </td>
-            <td> {championship.goals[8]} </td>
-            <td> {championship.wins[8]} </td>
-            <td> {championship.draws[8]} </td>
-            <td> {championship.loses[8]} </td>
-          </tr>
-          <tr class="h-20">
-            <td> <img src={championship.image[9]} height="80px" width="80px"> </td>
-            <td> {championship.teams[9]} </td>
-            <td> {championship.points[9]} </td>
-            <td> {championship.goals[9]} </td>
-            <td> {championship.wins[9]} </td>
-            <td> {championship.draws[9]} </td>
-            <td> {championship.loses[9]} </td>
-          </tr>
-          <tr class="h-20">
-            <td> <img src={championship.image[10]} height="80px" width="80px"> </td>
-            <td> {championship.teams[10]} </td>
-            <td> {championship.points[10]} </td>
-            <td> {championship.goals[10]} </td>
-            <td> {championship.wins[10]} </td>
-            <td> {championship.draws[10]} </td>
-            <td> {championship.loses[10]} </td>
-          </tr>
-          <tr class="h-20">
-            <td> <img src={championship.image[11]} height="80px" width="80px"> </td>
-            <td> {championship.teams[11]} </td>
-            <td> {championship.points[11]} </td>
-            <td> {championship.goals[11]} </td>
-            <td> {championship.wins[11]} </td>
-            <td> {championship.draws[11]} </td>
-            <td> {championship.loses[11]} </td>
-          </tr>
-          <tr class="h-20">
-            <td> <img src={championship.image[12]} height="80px" width="80px"> </td>
-            <td> {championship.teams[12]} </td>
-            <td> {championship.points[12]} </td>
-            <td> {championship.goals[12]} </td>
-            <td> {championship.wins[12]} </td>
-            <td> {championship.draws[12]} </td>
-            <td> {championship.loses[12]} </td>
-          </tr>
-        </table>
+        )
+      )}
+    </table>
   </div>
+
 <style>
   td {
     text-align: center;
