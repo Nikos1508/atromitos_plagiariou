@@ -1,9 +1,9 @@
 {
-    "image": "",
-    "team": "",
-    "points": "",
-    "goals": "",
-    "wins": "",
-    "draws": "",
-    "loses": ""
+    "image": "../../../public/Ατρόμητος Πλαγιαρίου.png",
+    "team": "Ατρόμητος Πλαγιαρίου",
+    "points": "0",
+    "goals": "0",
+    "wins": "0",
+    "draws": "0",
+    "loses": "0"
 }

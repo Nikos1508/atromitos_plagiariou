@@ -1,9 +1,9 @@
 {
-    "image": "",
-    "team": "",
-    "points": "",
-    "goals": "",
-    "wins": "",
-    "draws": "",
-    "loses": ""
+    "image": "../../../public/Ατρόμητος Αγίου Αντωνίου.png",
+    "team": "Ατρόμητος Αγίου Αντωνίου",
+    "points": "0",
+    "goals": "0",
+    "wins": "0",
+    "draws": "0",
+    "loses": "0"
 }

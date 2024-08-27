@@ -14,18 +14,18 @@ console.log(teams)
   <div>
     <table class="w-full text-2xl font-semibold text-sky-100">
       <tr class="h-20">
-        <th class="w-[12vw]">           </th>
+        <th class="w-[11vw]">           </th>
         <th class="w-[30vw]"> Ομάδα     </th>
-        <th class="w-[12vw]"> Βαθμοί    </th>
-        <th class="w-[12vw]"> Γκολ      </th>
-        <th class="w-[12vw]"> Νίκες     </th>
-        <th class="w-[12vw]"> Ισοπαλίες </th>
-        <th class="w-[12vw]"> Ήττες     </th>
+        <th class="w-[11vw]"> Βαθμοί    </th>
+        <th class="w-[11vw]"> Γκολ      </th>
+        <th class="w-[11vw]"> Νίκες     </th>
+        <th class="w-[11vw]"> Ισοπαλίες </th>
+        <th class="w-[11vw]"> Ήττες     </th>
       </tr>
       {teams.map(
         team => (
           <tr class="h-20">
-            <td class="text-center border-t-[3px] border-solid "> <img src={team.image} height="80px" width="80px"> </td>
+            <td class="text-center border-t-[3px] border-solid "> <img src={team.image}height="80px" width="80px"> </td>
             <td> {team.team} </td>
             <td> {team.points} </td>
             <td> {team.goals} </td>
@@ -37,7 +37,6 @@ console.log(teams)
       )}
     </table>
   </div>
-
 <style>
   td {
     text-align: center;
