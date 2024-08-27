@@ -9,6 +9,7 @@ export default {
 				'dropdown-bg': '#5375A9',
 				'home-team': '#1847bd',
 				'goalkeeper-home-team': '#2eabd8',
+				'footer': '#5b7ad0'
 			  },
 			width: {
 				'380px': '380px'
