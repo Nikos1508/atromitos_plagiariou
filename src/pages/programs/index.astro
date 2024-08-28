@@ -1,57 +1,63 @@
 ---
 import Layout from "../../layout/default.astro"
+import { getCollection } from "astro:content";
+
+let programs = await getCollection("programs");
+programs = programs.map(entry => entry.data) as any;
 ---
 
 <Layout title="Προγράμματα">
+
+    <div class="text-7xl text-blue-400 text-center mt-3 mb-10"> Εβδομαδιαίο Πρόγραμμα Προπονήσεων </div>
 	<div class="flex flex-row justify-evenly items-center">
 
         <div class="w-[30vw] bg-emerald-500 rounded-xl m-3">
             <div class="w-[30vw] text-2xl text-center font-semibold text-emerald-900 p-2"> K12 |  10 - 12 ετών </div>
             <div class="w-[30vw] bg-zinc-300 text-2xl text-center font-semibold text-stone-600 p-2 flex flex-row justify-between items-center">
-                <div class="ml-[0.5vw]"> Δευτέρα </div> <div class="flex flex-row justify-between items-center"> <div class="mr-[2vw]"> xx:xx - xx:xx </div> <div class="text-base"> (Προπόνηση) </div>  </div>
+                <div class="ml-[0.5vw]"> Δευτέρα </div> <div class="flex flex-row justify-between items-center"> <div class="mr-[2vw]"> {programs[0].k12.monday[1]} </div> <div class="text-base"> {programs[0].k12.monday[0]} </div>  </div>
             </div>
             <div class="w-[30vw] bg-zinc-100 text-2xl text-center font-semibold text-stone-400 p-2 flex flex-row justify-between items-center">
-                <div class="ml-[0.5vw]"> Τρίτη </div> <div class="flex flex-row justify-between items-center"> <div class="mr-[2vw]"> xx:xx - xx:xx </div> <div class="text-base"> (Προπόνηση) </div>  </div>
+                <div class="ml-[0.5vw]"> Τρίτη  </div> <div class="flex flex-row justify-between items-center"> <div class="mr-[2vw]"> {programs[0].k12.tuesday[1]} </div> <div class="text-base"> {programs[0].k12.tuesday[0]} </div>  </div>
             </div>
             <div class="w-[30vw] bg-zinc-300 text-2xl text-center font-semibold text-stone-600 p-2 flex flex-row justify-between items-center">
-                <div class="ml-[0.5vw]"> Τετάρτη </div> <div class="flex flex-row justify-between items-center"> <div class="mr-[2vw]"> xx:xx - xx:xx </div> <div class="text-base"> (Προπόνηση) </div>  </div>
+                <div class="ml-[0.5vw]"> Τετάρτη </div> <div class="flex flex-row justify-between items-center"> <div class="mr-[2vw]"> {programs[0].k12.wednesday[1]} </div> <div class="text-base"> {programs[0].k12.wednesday[0]} </div>  </div>
             </div>
             <div class="w-[30vw] bg-zinc-100 text-2xl text-center font-semibold text-stone-400 p-2 flex flex-row justify-between items-center">
-                <div class="ml-[0.5vw]"> Πέμπτη </div> <div class="flex flex-row justify-between items-center"> <div class="mr-[2vw]"> xx:xx - xx:xx </div> <div class="text-base"> (Προπόνηση) </div> </div>
+                <div class="ml-[0.5vw]"> Πέμπτη </div> <div class="flex flex-row justify-between items-center"> <div class="mr-[2vw]"> {programs[0].k12.thursday[1]} </div> <div class="text-base"> {programs[0].k12.thursday[0]} </div> </div>
             </div>               
             <div class="w-[30vw] bg-zinc-300 text-2xl text-center font-semibold text-stone-600 p-2 flex flex-row justify-between items-center">
-                <div class="ml-[0.5vw]"> Παρασκευή </div> <div class="flex flex-row justify-between items-center"> <div class="mr-[2vw]"> xx:xx - xx:xx </div> <div class="text-base"> (Προπόνηση) </div>  </div>
+                <div class="ml-[0.5vw]"> Παρασκευή </div> <div class="flex flex-row justify-between items-center"> <div class="mr-[2vw]"> {programs[0].k12.friday[1]} </div> <div class="text-base"> {programs[0].k12.friday[0]} </div>  </div>
             </div>
             <div class="w-[30vw] bg-zinc-100 text-2xl text-center font-semibold text-stone-400 p-2 flex flex-row justify-between items-center">
-                <div class="ml-[0.5vw]"> Σαββάτο </div> <div class="flex flex-row justify-between items-center"> <div class="mr-[2vw]"> xx:xx - xx:xx </div> <div class="text-base"> (Προπόνηση) </div> </div>
+                <div class="ml-[0.5vw]"> Σαββάτο </div> <div class="flex flex-row justify-between items-center"> <div class="mr-[2vw]"> {programs[0].k12.saturday[1]} </div> <div class="text-base"> {programs[0].k12.saturday[0]} </div> </div>
             </div>
             <div class="w-[30vw] bg-zinc-300 text-2xl text-center font-semibold text-stone-600 p-2 flex flex-row justify-between items-center rounded-b-xl  ">
-                <div class="ml-[0.5vw]"> Κυριακή </div> <div> xx:xx </div> <div class="text-base"> (Αγώνας) </div>
+                <div class="ml-[0.5vw]"> Κυριακή </div> <div> {programs[0].k12.sunday[1]} </div> <div class="text-base"> {programs[0].k12.sunday[0]} </div>
             </div>
         </div>
 
         <div class="w-[30vw] bg-emerald-500 rounded-xl m-3">
             <div class="w-[30vw] text-2xl text-center font-semibold text-emerald-900 p-2"> K12 |  10 - 12 ετών </div>
             <div class="w-[30vw] bg-zinc-300 text-2xl text-center font-semibold text-stone-600 p-2 flex flex-row justify-between items-center">
-                <div class="ml-[0.5vw]"> Δευτέρα </div> <div class="flex flex-row justify-between items-center"> <div class="mr-[2vw]"> xx:xx - xx:xx </div> <div class="text-base"> (Προπόνηση) </div>  </div>
+                <div class="ml-[0.5vw]"> Δευτέρα </div> <div class="flex flex-row justify-between items-center"> <div class="mr-[2vw]"> {programs[0].k14.monday[1]} </div> <div class="text-base"> {programs[0].k14.monday[0]} </div>  </div>
             </div>
             <div class="w-[30vw] bg-zinc-100 text-2xl text-center font-semibold text-stone-400 p-2 flex flex-row justify-between items-center">
-                <div class="ml-[0.5vw]"> Τρίτη </div> <div class="flex flex-row justify-between items-center"> <div class="mr-[2vw]"> xx:xx - xx:xx </div> <div class="text-base"> (Προπόνηση) </div>  </div>
+                <div class="ml-[0.5vw]"> Τρίτη  </div> <div class="flex flex-row justify-between items-center"> <div class="mr-[2vw]"> {programs[0].k14.tuesday[1]} </div> <div class="text-base"> {programs[0].k14.tuesday[0]} </div>  </div>
             </div>
             <div class="w-[30vw] bg-zinc-300 text-2xl text-center font-semibold text-stone-600 p-2 flex flex-row justify-between items-center">
-                <div class="ml-[0.5vw]"> Τετάρτη </div> <div class="flex flex-row justify-between items-center"> <div class="mr-[2vw]"> xx:xx - xx:xx </div> <div class="text-base"> (Προπόνηση) </div>  </div>
+                <div class="ml-[0.5vw]"> Τετάρτη </div> <div class="flex flex-row justify-between items-center"> <div class="mr-[2vw]"> {programs[0].k14.wednesday[1]} </div> <div class="text-base"> {programs[0].k14.wednesday[0]} </div>  </div>
             </div>
             <div class="w-[30vw] bg-zinc-100 text-2xl text-center font-semibold text-stone-400 p-2 flex flex-row justify-between items-center">
-                <div class="ml-[0.5vw]"> Πέμπτη </div> <div class="flex flex-row justify-between items-center"> <div class="mr-[2vw]"> xx:xx - xx:xx </div> <div class="text-base"> (Προπόνηση) </div> </div>
+                <div class="ml-[0.5vw]"> Πέμπτη </div> <div class="flex flex-row justify-between items-center"> <div class="mr-[2vw]"> {programs[0].k14.thursday[1]} </div> <div class="text-base"> {programs[0].k14.thursday[0]} </div> </div>
             </div>               
             <div class="w-[30vw] bg-zinc-300 text-2xl text-center font-semibold text-stone-600 p-2 flex flex-row justify-between items-center">
-                <div class="ml-[0.5vw]"> Παρασκευή </div> <div class="flex flex-row justify-between items-center"> <div class="mr-[2vw]"> xx:xx - xx:xx </div> <div class="text-base"> (Προπόνηση) </div>  </div>
+                <div class="ml-[0.5vw]"> Παρασκευή </div> <div class="flex flex-row justify-between items-center"> <div class="mr-[2vw]"> {programs[0].k14.friday[1]} </div> <div class="text-base"> {programs[0].k14.friday[0]} </div>  </div>
             </div>
             <div class="w-[30vw] bg-zinc-100 text-2xl text-center font-semibold text-stone-400 p-2 flex flex-row justify-between items-center">
-                <div class="ml-[0.5vw]"> Σαββάτο </div> <div class="flex flex-row justify-between items-center"> <div class="mr-[2vw]"> xx:xx - xx:xx </div> <div class="text-base"> (Προπόνηση) </div> </div>
+                <div class="ml-[0.5vw]"> Σαββάτο </div> <div class="flex flex-row justify-between items-center"> <div class="mr-[2vw]"> {programs[0].k14.saturday[1]} </div> <div class="text-base"> {programs[0].k14.saturday[0]} </div> </div>
             </div>
             <div class="w-[30vw] bg-zinc-300 text-2xl text-center font-semibold text-stone-600 p-2 flex flex-row justify-between items-center rounded-b-xl  ">
-                <div class="ml-[0.5vw]"> Κυριακή </div> <div> xx:xx </div> <div class="text-base"> (Αγώνας) </div>
+                <div class="ml-[0.5vw]"> Κυριακή </div> <div> {programs[0].k14.sunday[1]} </div> <div class="text-base"> {programs[0].k14.sunday[0]} </div>
             </div>
         </div>
 

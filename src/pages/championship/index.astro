@@ -7,7 +7,6 @@ let championship = (await getEntry("championship", "championship")).data;
 const teams = await Promise.all(championship.positions.map(
   async (teams: string) => (await getEntry('teams', teams)).data)
 )
-console.log(teams)
 ---
 
 <Layout title="Πρωτάθλημα">

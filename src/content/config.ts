@@ -30,6 +30,30 @@ const teamsCollection = defineCollection({
   }),
 });
 
+const programsCollection = defineCollection({
+  type: 'data',
+  schema: z.object({
+    k12: z.object({
+      monday: z.array( z.string() ),
+      tuesday: z.array( z.string() ),
+      wednesday: z.array( z.string() ),
+      thursday: z.array( z.string() ),
+      friday: z.array( z.string() ),
+      saturday: z.array( z.string() ),
+      sunday: z.array( z.string() )
+    }),
+    k14: z.object({
+      monday: z.array( z.string() ),
+      tuesday: z.array( z.string() ),
+      wednesday: z.array( z.string() ),
+      thursday: z.array( z.string() ),
+      friday: z.array( z.string() ),
+      saturday: z.array( z.string() ),
+      sunday: z.array( z.string() )
+    }),
+  }),
+});
+
 
   export const collections = {
     'match': matchesCollection,
