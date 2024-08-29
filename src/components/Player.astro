@@ -2,7 +2,12 @@
 let {name, image} = Astro.props
 ---
 
-<div class="w-[15vw] bg-lime-400 flex flex-row items-center py-2 px-3 rounded-lg">
+<div class="player w-[15vw] bg-blue-400 flex flex-row items-center py-2 px-3 rounded-lg hover:bg-blue-300">
     <img src={image} class="w-[5vw] rounded-full">
     <p class="ml-[0.5vw]"> {name} </p>
 </div>
+<style>
+.player {
+    transition: all 0.3s ease-in-out;
+}
+</style>
