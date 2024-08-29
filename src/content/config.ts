@@ -11,11 +11,11 @@ const matchesCollection = defineCollection({
   });
 
 const championshipCollection = defineCollection({
-    type: 'data',
-    schema: z.object({
-      positions: z.array( z.string() )
-    }),
-  });
+  type: 'data',
+  schema: z.object({
+    positions: z.array( z.string() )
+  }),
+});
   
 const teamsCollection = defineCollection({
   type: 'data',
@@ -27,6 +27,20 @@ const teamsCollection = defineCollection({
     wins:   z.string(),
     draws:  z.string(),
     loses:  z.string()
+  }),
+});
+
+const playersCollection = defineCollection({
+  type: 'data',
+  schema: z.object({
+    player1: z.array( z.string() ),
+    player2: z.array( z.string() ),
+    player3: z.array( z.string() ),
+    player4: z.array( z.string() ),
+    player5: z.array( z.string() ),
+    player6: z.array( z.string() ),
+    player7: z.array( z.string() ),
+    player8: z.array( z.string() )
   }),
 });
 
@@ -58,5 +72,7 @@ const programsCollection = defineCollection({
   export const collections = {
     'match': matchesCollection,
     'championship': championshipCollection,
-    'teams': teamsCollection
+    'teams': teamsCollection,
+    'programs': programsCollection,
+    'players': playersCollection
   };

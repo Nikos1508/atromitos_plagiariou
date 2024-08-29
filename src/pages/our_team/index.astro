@@ -1,6 +1,10 @@
 ---
 import Layout from "../../layout/default.astro"
 import Player from "../../components/Player.astro"
+import { getCollection } from "astro:content";
+
+let players = await getCollection("players");
+players = players.map(entry => entry.data) as any;
 ---
 
 <Layout title="Η ομάδα μας">
@@ -34,22 +38,22 @@ import Player from "../../components/Player.astro"
         <div class="w-[40vw] h-[71vh] flex flex-col justify-evenly">
 
             <div class="flex flex-row justify-evenly">
-                <Player name = "Όνομα Επίθετο" image = "../../../public/banner.png"/>
-                <Player name = "Όνομα Επίθετο" image = "../../../public/banner.png"/>
+                <Player name = {players[0].player1[0]} image = {players[0].player1[1]} position = {players[0].player1[2]}/>
+                <Player name = {players[0].player2[0]} image = {players[0].player2[1]} position = {players[0].player2[2]}/>
             </div>
             <div class="flex flex-row justify-evenly">
-                <Player name = "Όνομα Επίθετο" image = "../../../public/banner.png"/>
-                <Player name = "Όνομα Επίθετο" image = "../../../public/banner.png"/>
+                <Player name = {players[0].player3[0]} image = {players[0].player3[1]} position = {players[0].player3[2]}/>
+                <Player name = {players[0].player4[0]} image = {players[0].player4[1]} position = {players[0].player4[2]}/>
             </div>
             <div class="flex flex-row justify-evenly">
-                <Player name = "Όνομα Επίθετο" image = "../../../public/banner.png"/>
-                <Player name = "Όνομα Επίθετο" image = "../../../public/banner.png"/>
+                <Player name = {players[0].player5[0]} image = {players[0].player5[1]} position = {players[0].player5[2]}/>
+                <Player name = {players[0].player6[0]} image = {players[0].player6[1]} position = {players[0].player6[2]}/>
             </div>
             <div class="flex flex-row justify-evenly">
-                <Player name = "Όνομα Επίθετο" image = "../../../public/banner.png"/>
-                <Player name = "Όνομα Επίθετο" image = "../../../public/banner.png"/>
+                <Player name = {players[0].player7[0]} image = {players[0].player7[1]} position = {players[0].player7[2]}/>
+                <Player name = {players[0].player8[0]} image = {players[0].player8[1]} position = {players[0].player8[2]}/>
             </div>
-            
+
         </div>
 
     </div>

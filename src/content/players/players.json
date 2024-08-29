@@ -1,0 +1,10 @@
+{
+    "player1": ["Όνομα Επίθετο", "../../../public/banner.png", "Αμυντικός"],
+    "player2": ["Όνομα Επίθετο", "../../../public/banner.png", "Αμυντικός"],
+    "player3": ["Όνομα Επίθετο", "../../../public/banner.png", "Θέση"],
+    "player4": ["Όνομα Επίθετο", "../../../public/banner.png", "Θέση"],
+    "player5": ["Όνομα Επίθετο", "../../../public/banner.png", "Θέση"],
+    "player6": ["Όνομα Επίθετο", "../../../public/banner.png", "Θέση"],
+    "player7": ["Όνομα Επίθετο", "../../../public/banner.png", "Θέση"],
+    "player8": ["Όνομα Επίθετο", "../../../public/banner.png", "Θέση"]
+}
