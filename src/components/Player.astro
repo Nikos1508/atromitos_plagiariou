@@ -1,37 +1,54 @@
 ---
 let {name, image, position} = Astro.props
 ---
-
-<div class="player w-[15vw] bg-blue-400 flex flex-row items-center py-2 px-3 rounded-lg hover:bg-blue-300">
-    <img src={image} class="w-[5vw] rounded-full">
-    <div class="flex flex-col items-center justify-evenly">
-        <p class="ml-[0.5vw]"> {name} </p>
         {position == "Τερματοφύλακας" &&
-            <div class="flex flex-row justify-evenly items-center">
-                <div class="p-2.5 bg-green-500 rounded-full w-[1vw] h-[1vw] mr-[0.5vw]"> </div>
-                <div> {position} </div>
+            <div class="player w-[17vw] bg-blue-400 flex flex-row items-center justify-around py-2 px-3 rounded-lg hover:bg-blue-300 hiddenDiv group1">
+                <img src={image} class="w-[5vw] rounded-full">
+                <div class="flex flex-col items-center justify-evenly">
+                    <p class="ml-[0.5vw]"> {name} </p>
+                    <div class="flex flex-row justify-evenly items-center">
+                        <div class="p-2.5 bg-green-500 rounded-full w-[1vw] h-[1vw] mr-[0.5vw]"> </div>
+                        <div> {position} </div>
+                    </div>
+                </div>
             </div>
         }
         {position == "Αμυντικός" &&
-            <div class="flex flex-row justify-evenly items-center">
-                <div class="p-2.5 bg-yellow-500 rounded-full w-[1vw] h-[1vw] mr-[0.5vw]"> </div>
-                <div> {position} </div>
+            <div class="player w-[17vw] bg-blue-400 flex flex-row items-center justify-around py-2 px-3 rounded-lg hover:bg-blue-300 hiddenDiv group2">
+                <img src={image} class="w-[5vw] rounded-full">
+                <div class="flex flex-col items-center justify-evenly">
+                    <p class="ml-[0.5vw]"> {name} </p>
+                    <div class="flex flex-row justify-evenly items-center">
+                        <div class="p-2.5 bg-yellow-500 rounded-full w-[1vw] h-[1vw] mr-[0.5vw]"> </div>
+                        <div> {position} </div>
+                    </div>
+                </div>
             </div>
         }
         {position == "Μέσος" &&
-            <div class="flex flex-row justify-evenly items-center">
-                <div class="p-2.5 bg-blue-500 rounded-full w-[1vw] h-[1vw] mr-[0.5vw]"> </div>
-                <div> {position} </div>
+            <div class="player w-[17vw] bg-blue-400 flex flex-row items-center justify-around py-2 px-3 rounded-lg hover:bg-blue-300 hiddenDiv group3">
+                <img src={image} class="w-[5vw] rounded-full">
+                <div class="flex flex-col items-center justify-evenly">
+                    <p class="ml-[0.5vw]"> {name} </p>
+                    <div class="flex flex-row justify-evenly items-center">
+                        <div class="p-2.5 bg-blue-500 rounded-full w-[1vw] h-[1vw] mr-[0.5vw]"> </div>
+                        <div> {position} </div>
+                    </div>
+                </div>
             </div>
         }
         {position == "Επιθετικός" &&
-            <div class="flex flex-row justify-evenly items-center">
-                <div class="p-2.5 bg-red-500 rounded-full w-[1vw] h-[1vw] mr-[0.5vw]"> </div>
-                <div> {position} </div>
+            <div class="player w-[17vw] bg-blue-400 flex flex-row items-center justify-around py-2 px-3 rounded-lg hover:bg-blue-300 hiddenDiv group4">
+                <img src={image} class="w-[5vw] rounded-full">
+                <div class="flex flex-col items-center justify-evenly">
+                    <p class="ml-[0.5vw]"> {name} </p>
+                    <div class="flex flex-row justify-evenly items-center">
+                        <div class="p-2.5 bg-red-500 rounded-full w-[1vw] h-[1vw] mr-[0.5vw]"> </div>
+                        <div> {position} </div>
+                    </div>
+                </div>
             </div>
         }
-    </div>
-</div>
 
 <style>
 .player {
