@@ -1,10 +1,12 @@
 ---
 import Layout from "../../layout/default.astro"
+import Player from "../../components/Player.astro"
 ---
 
 <Layout title="Η ομάδα μας">
-	
-    <div>
+	<div class="flex flex-row justify-evenly items-center">
+
+        <div class="my-[3vh] w-[52.1vw]">
             <section class="pitch">
             <div class="field left">
                 <div class="penalty-area"></div>
@@ -27,7 +29,53 @@ import Layout from "../../layout/default.astro"
                     <div class="player eleven   flex flex-row justify-center items-center text-white"> 11 </div>
                 </div>
             </section>
-      </div>
+        </div>
+    
+        <div class="w-[40vw] h-[71vh] flex flex-col justify-evenly">
+            <div class="flex flex-row justify-evenly">
+                <div class="w-[15vw] bg-lime-400 flex flex-row items-center py-2 px-3 rounded-lg">
+                    <img src="../../../public/banner.png" class="w-[5vw] rounded-full">
+                    <p class="ml-[0.5vw]"> Όνομα Επίθετο </p>
+                </div>
+                <div class="w-[15vw] bg-lime-400 flex flex-row items-center py-2 px-3 rounded-lg">
+                    <img src="../../../public/banner.png" class="w-[5vw] rounded-full">
+                    <p class="ml-[0.5vw]"> Όνομα Επίθετο </p>
+                </div>
+            </div>
+            <div class="flex flex-row justify-evenly">
+                <div class="w-[15vw] bg-lime-400 flex flex-row items-center py-2 px-3 rounded-lg">
+                    <img src="../../../public/banner.png" class="w-[5vw] rounded-full">
+                    <p class="ml-[0.5vw]"> Όνομα Επίθετο </p>
+                </div>
+                <div class="w-[15vw] bg-lime-400 flex flex-row items-center py-2 px-3 rounded-lg">
+                    <img src="../../../public/banner.png" class="w-[5vw] rounded-full">
+                    <p class="ml-[0.5vw]"> Όνομα Επίθετο </p>
+                </div>
+            </div>
+            <div class="flex flex-row justify-evenly">
+                <div class="w-[15vw] bg-lime-400 flex flex-row items-center py-2 px-3 rounded-lg">
+                    <img src="../../../public/banner.png" class="w-[5vw] rounded-full">
+                    <p class="ml-[0.5vw]"> Όνομα Επίθετο </p>
+                </div>
+                <div class="w-[15vw] bg-lime-400 flex flex-row items-center py-2 px-3 rounded-lg">
+                    <img src="../../../public/banner.png" class="w-[5vw] rounded-full">
+                    <p class="ml-[0.5vw]"> Όνομα Επίθετο </p>
+                </div>
+            </div>
+            <div class="flex flex-row justify-evenly">
+                <div class="w-[15vw] bg-lime-400 flex flex-row items-center py-2 px-3 rounded-lg">
+                    <img src="../../../public/banner.png" class="w-[5vw] rounded-full">
+                    <p class="ml-[0.5vw]"> Όνομα Επίθετο </p>
+                </div>
+                <div class="w-[15vw] bg-lime-400 flex flex-row items-center py-2 px-3 rounded-lg">
+                    <img src="../../../public/banner.png" class="w-[5vw] rounded-full">
+                    <p class="ml-[0.5vw]"> Όνομα Επίθετο </p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
 
       <style>
 
@@ -36,7 +84,6 @@ import Layout from "../../layout/default.astro"
         width: 800px;
         height: 520px;
         position: relative;
-        margin-left: 50px;
         }
         .pitch:after{
         content: "";
