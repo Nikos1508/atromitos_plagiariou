@@ -4,7 +4,54 @@ import Carousel from "../../components/Carousel.astro"
 ---
 
 <Layout title="Η ιστορία μας">
-	
-	<Carousel/>
+	<div class="triggerDiv"> Delete everything </div>
+    <div class="triggerDiv" data-target="group1">Click me for Group 1!</div>
+    <div class="triggerDiv" data-target="group2">Click me for Group 2!</div>
+    <div class="triggerDiv" data-target="group3">Click me for Group 3!</div>
+
+    <div class="hiddenDiv group1"> 1 </div>
+    <div class="hiddenDiv group1"> 2 </div>
+
+    <div class="hiddenDiv group2"> 3 </div>
+    <div class="hiddenDiv group2"> 4 </div>
+
+    <div class="hiddenDiv group3"> 5 </div>
+    <div class="hiddenDiv group3"> 6 </div>
+
+    <script>
+        document.querySelectorAll('.triggerDiv').forEach(trigger => {
+            trigger.addEventListener('click', function() {
+
+                document.querySelectorAll('.hiddenDiv').forEach(div => { 		//Hide everything
+                    div.style.display = 'none';
+                });
+
+                const targetGroup = this.getAttribute('data-target'); 			//Select what it's gonna show
+                
+                document.querySelectorAll('.' + targetGroup).forEach(div => { 	//Take the targeted div and show it
+                    div.style.display = 'block';
+                });
+            });
+        });
+    </script>
+
+	<style>
+		.triggerDiv {
+			width: 200px;
+			height: 100px;
+			background-color: lightblue;
+			text-align: center;
+			margin: 20px;
+		}
+
+		.hiddenDiv {
+			display: none;
+			width: 200px;
+			height: 100px;
+			background-color: lightgreen;
+			text-align: center;
+			margin: 20px;
+		}
+	</style>
 
 </Layout>
