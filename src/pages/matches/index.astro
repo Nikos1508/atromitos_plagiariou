@@ -11,13 +11,18 @@ match = match.map(entry => entry.data) as any;
 
     <div>
         <h2 class="text-blanched-almond text-5xl flex justify-center"> Β' τοπικό Θεσσαλονίκης, Χος όμιλος</h2>
+        
+        {match[0].score == "" ? 
+            <div class="text-blue-400 text-5xl flex justify-center my-8"> Η αγωνιστικές θα αρχήσουν από τις  </div>:
+            null
+        }
     </div>
 
 	<div class="mt-8 overflow-hidden">
 
         <div class="flex flex-row justify-evenly items-center text-blanched-almond my-5">
 
-            {match[0].teams &&
+            {match[0].score &&
                 <a href="../matches/1">
                     <div class="animate slide1 flex justify-center items-center border-4 rounded-xl p-3 border-blue-400 bg-sky-600 w-[45vw]">
                             <h2 class="text-center text-[24px]"> 
@@ -29,7 +34,7 @@ match = match.map(entry => entry.data) as any;
                 </a>
             }
 
-            {match[1].teams && 
+            {match[1].score && 
                 <a href="../matches/2">
                     <div class="animate slide2 flex justify-center items-center border-4 rounded-xl p-3 border-blue-400 bg-sky-600 w-[45vw]">
                         <h2 class="text-center text-[24px]"> 
@@ -44,7 +49,7 @@ match = match.map(entry => entry.data) as any;
 
         <div class="flex flex-row justify-evenly items-center text-blanched-almond my-5">
 
-            {match[2].teams && 
+            {match[2].score && 
                 <a href="../matches/3">
                     <div class="animate slide1 flex justify-center items-center border-4 rounded-xl p-3 border-blue-400 bg-sky-600 w-[45vw]">
                         <h2 class="text-center text-[24px]"> 
@@ -56,7 +61,7 @@ match = match.map(entry => entry.data) as any;
                 </a>
             }
             
-            {match[3].teams && 
+            {match[3].score && 
                 <a href="../matches/4">
                     <div class="animate slide2 flex justify-center items-center border-4 rounded-xl p-3 border-blue-400 bg-sky-600 w-[45vw]">
                             <h2 class="text-center text-[24px]"> 
@@ -71,7 +76,7 @@ match = match.map(entry => entry.data) as any;
         </div>
         <div class="flex flex-row justify-evenly items-center text-blanched-almond my-5">
             
-            {match[16].teams && 
+            {match[4].score && 
                 <a href="../matches/5">
                     <div class="animate slide1 flex justify-center items-center border-4 rounded-xl p-2 border-blue-400 bg-sky-600 w-[45vw]">
                         <h2 class="text-center text-[23px] my-2"> 
@@ -83,7 +88,7 @@ match = match.map(entry => entry.data) as any;
                 </a>
             }
 
-            {match[5].teams && 
+            {match[5].score && 
                 <a href="../matches/6">
                     <div class="animate slide2 flex justify-center items-center border-4 rounded-xl p-3 border-blue-400 bg-sky-600 w-[45vw]">
                             <h2 class="text-center text-[24px]"> 
@@ -98,7 +103,7 @@ match = match.map(entry => entry.data) as any;
         </div>
         <div class="flex flex-row justify-evenly items-center text-blanched-almond my-4">
 
-            {match[6].teams && 
+            {match[6].score && 
                 <a href="../matches/7">
                     <div class="animate slide1 flex justify-center items-center border-4 rounded-xl p-3 border-blue-400 bg-sky-600 w-[45vw]">
                             <h2 class="text-center text-[24px]"> 
@@ -110,7 +115,7 @@ match = match.map(entry => entry.data) as any;
                 </a>
             }
 
-            {match[7].teams && 
+            {match[7].score && 
                 <a href="../matches/8">
                     <div class="animate slide2 flex justify-center items-center border-4 rounded-xl p-2 border-blue-400 bg-sky-600 w-[45vw]">
                         <h2 class="text-center text-[24px]"> 
@@ -125,7 +130,7 @@ match = match.map(entry => entry.data) as any;
         </div>
         <div class="flex flex-row justify-evenly items-center text-blanched-almond my-4">
 
-            {match[8].teams && 
+            {match[8].score && 
                 <a href="../matches/9">
                     <div class="animate slide1 flex justify-center items-center border-4 rounded-xl p-3 border-blue-400 bg-sky-600 w-[45vw]">
                         <h2 class="text-center text-[24px]"> 
@@ -137,7 +142,7 @@ match = match.map(entry => entry.data) as any;
                 </a>
             }
 
-            {match[9].teams && 
+            {match[9].score && 
                 <a href="../matches/10">
                     <div class="animate slide2 flex justify-center items-center border-4 rounded-xl p-2 border-blue-400 bg-sky-600 w-[45vw]">
                         <h2 class="text-center text-[24px]"> 
@@ -152,7 +157,7 @@ match = match.map(entry => entry.data) as any;
         </div>
         <div class="flex flex-row justify-evenly items-center text-blanched-almond my-4">
 
-            {match[10].teams && 
+            {match[10].score && 
                 <a href="../matches/11">
                     <div class="animate slide1 flex justify-center items-center border-4 rounded-xl p-3 border-blue-400 bg-sky-600 w-[45vw]">
                             <h2 class="text-center text-[24px]"> 
@@ -164,7 +169,7 @@ match = match.map(entry => entry.data) as any;
                 </a>
             }
 
-            {match[11].teams && 
+            {match[11].score && 
                 <a href="../matches/12">
                     <div class="animate slide2 flex justify-center items-center border-4 rounded-xl p-2 border-blue-400 bg-sky-600 w-[45vw]">
                         <h2 class="text-center text-[24px]"> 
@@ -179,7 +184,7 @@ match = match.map(entry => entry.data) as any;
         </div>
         <div class="flex flex-row justify-evenly items-center text-blanched-almond my-4">
             
-            {match[12].teams && 
+            {match[12].score && 
                 <a href="../matches/13">
                     <div class="animate slide1 flex justify-center items-center border-4 rounded-xl p-2 border-blue-400 bg-sky-600 w-[45vw]">
                         <h2 class="text-center text-[24px]"> 
@@ -190,7 +195,7 @@ match = match.map(entry => entry.data) as any;
                     </div>  
                 </a>
             }
-            {match[13].teams && 
+            {match[13].score && 
                 <a href="../matches/14">
                     <div class="animate slide2 flex justify-center items-center border-4 rounded-xl p-3 border-blue-400 bg-sky-600 w-[45vw]">
                         <h2 class="text-center text-[24px]"> 
@@ -205,7 +210,7 @@ match = match.map(entry => entry.data) as any;
         </div>
         <div class="flex flex-row justify-evenly items-center text-blanched-almond my-4">
 
-            {match[14].teams && 
+            {match[14].score && 
                 <a href="../matches/15">
                     <div class="animate slide1 flex justify-center items-center border-4 rounded-xl p-3 border-blue-400 bg-sky-600 w-[45vw]">
                             <h2 class="text-center text-[24px]"> 
@@ -217,7 +222,7 @@ match = match.map(entry => entry.data) as any;
                 </a>
             }
 
-            {match[15].teams && 
+            {match[15].score && 
                 <a href="../matches/16">
                     <div class="animate slide2 flex justify-center items-center border-4 rounded-xl p-2 border-blue-400 bg-sky-600 w-[45vw]">
                         <h2 class="text-center text-[24px]"> 
@@ -232,66 +237,81 @@ match = match.map(entry => entry.data) as any;
         </div>
         <div class="flex flex-row justify-evenly items-center text-blanched-almond my-4">
 
-            {match[16].teams && 
-                <a href="../matches/3">
-                    <div class="animate slide3 flex justify-center items-center border-4 rounded-xl p-3 border-blue-400 bg-sky-600 w-[45vw]">
-                        <h2 class="text-center text-[24px]"> 
-                            {match[16].teams}
-                            <br> {match[16].score} 
-                            <br> 17η Αγωνιστική
-                        </h2> 
+            {match[16].score && 
+                <a href="../matches/17">
+                    <div class="animate slide1 flex justify-center items-center border-4 rounded-xl p-3 border-blue-400 bg-sky-600 w-[45vw]">
+                            <h2 class="text-center text-[24px]"> 
+                                {match[16].teams}
+                                <br> {match[16].score}
+                                <br> 17η Αγωνιστική {match[16].date}
+                            </h2> 
                     </div>
                 </a>
             }
 
-            {match[17].teams && 
-                <a href="../matches/9">
-                    <div class="animate slide3 flex justify-center items-center border-4 rounded-xl p-3 border-blue-400 bg-sky-600 w-[45vw]">
+            {match[17].score && 
+                <a href="../matches/18">
+                    <div class="animate slide2 flex justify-center items-center border-4 rounded-xl p-2 border-blue-400 bg-sky-600 w-[45vw]">
                         <h2 class="text-center text-[24px]"> 
                             {match[17].teams}
-                            <br> {match[17].score} 
-                            <br> 18η Αγωνιστική (13/1/2025)
+                            <br> {match[17].score}
+                            <br> 18η Αγωνιστική
                         </h2> 
-                    </div>
+                    </div>  
                 </a>
             }
 
         </div>
         <div class="flex flex-row justify-evenly items-center text-blanched-almond my-4">
 
-            {match[18].teams && 
-                <a href="../matches/10">
+            {match[18].score && 
+                <a href="../matches/19">
                     <div class="animate slide1 flex justify-center items-center border-4 rounded-xl p-3 border-blue-400 bg-sky-600 w-[45vw]">
                             <h2 class="text-center text-[24px]"> 
                                 {match[18].teams}
                                 <br> {match[18].score}
-                                <br> 19η Αγωνιστική
+                                <br> 19η Αγωνιστική {match[18].date}
                             </h2> 
                     </div>
                 </a>
             }
 
-            {match[19].teams && 
+            {match[19].score && 
                 <a href="../matches/20">
                     <div class="animate slide2 flex justify-center items-center border-4 rounded-xl p-2 border-blue-400 bg-sky-600 w-[45vw]">
                         <h2 class="text-center text-[24px]"> 
                             {match[19].teams}
                             <br> {match[19].score}
-                            <br> 20η Αγωνιστική
+                            <br> 20η Αγωνιστική {match[18].date}
                         </h2> 
                     </div>  
                 </a>
             }
 
-            {match[20].teams && 
+        </div>
+        <div class="flex flex-row justify-evenly items-center text-blanched-almond my-4">
+
+            {match[19].score && 
                 <a href="../matches/21">
-                    <div class="animate slide3 flex justify-center items-center border-4 rounded-xl p-3 border-blue-400 bg-sky-600 w-[45vw]">
+                    <div class="animate slide1 flex justify-center items-center border-4 rounded-xl p-3 border-blue-400 bg-sky-600 w-[45vw]">
+                            <h2 class="text-center text-[24px]"> 
+                                {match[19].teams}
+                                <br> {match[19].score}
+                                <br> 20η Αγωνιστική {match[19].date}
+                            </h2> 
+                    </div>
+                </a>
+            }
+
+            {match[20].score && 
+                <a href="../matches/22">
+                    <div class="animate slide2 flex justify-center items-center border-4 rounded-xl p-2 border-blue-400 bg-sky-600 w-[45vw]">
                         <h2 class="text-center text-[24px]"> 
                             {match[20].teams}
-                            <br> {match[20].score} 
-                            <br> 21η Αγωνιστική {match[20].date} 
+                            <br> {match[20].score}
+                            <br> 21η Αγωνιστική {match[18].date}
                         </h2> 
-                    </div>
+                    </div>  
                 </a>
             }
 
