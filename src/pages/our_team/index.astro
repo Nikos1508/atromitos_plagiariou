@@ -5,7 +5,6 @@ import { getCollection } from "astro:content";
 
 let players = await getCollection("players");
 players = players.map(entry => entry.data) as any;
-console.log(players[0].player10[2])
 ---
 
 <Layout title="Η ομάδα μας">
@@ -32,6 +31,7 @@ console.log(players[0].player10[2])
                     <div class="triggerDiv" data-target="group3"> <div class="player nine     flex flex-row justify-center items-center text-white"> 9 </div> </div>
                     <div class="triggerDiv" data-target="group4"> <div class="player ten      flex flex-row justify-center items-center text-white"> 10 </div> </div>
                     <div class="triggerDiv" data-target="group4"> <div class="player eleven   flex flex-row justify-center items-center text-white"> 11 </div> </div>
+                    <div class="triggerDiv" id="showAll"> <div class="show            flex flex-row justify-center items-center text-white"> <i class="fa-solid fa-eye"></i> </div> </div>
                 </div>
             </section>
         </div>
@@ -252,21 +252,33 @@ console.log(players[0].player10[2])
         }
       </style>
     <script>
-            document.querySelectorAll('.triggerDiv').forEach(trigger => {
+        document.querySelectorAll('.triggerDiv').forEach(trigger => {
             trigger.addEventListener('click', function() {
-
-                document.querySelectorAll('.hiddenDiv').forEach(div => { 		//Hide everything
+                // Hide all hidden divs first
+                document.querySelectorAll('.hiddenDiv').forEach(div => {
                     div.style.display = 'none';
                 });
 
-                const targetGroup = this.getAttribute('data-target'); 			//Select what it's gonna show
-                
-                document.querySelectorAll('.' + targetGroup).forEach(div => { 	//Take the targeted div and show it
-                    div.style.display = 'flex';
-                    div.style.flexDirection = 'row';
-                    div.style.justify = 'around';
-                    div.style.items = 'center';
-                });
+                if (this.id === 'showAll') {
+                    // Show all hidden divs
+                    document.querySelectorAll('.hiddenDiv').forEach(div => {
+                        div.style.display = 'flex';
+                        div.style.flexDirection = 'row';
+                        div.style.justify = 'around';
+                        div.style.items = 'center';
+                    });
+                } else {
+                    // Get the target group to show
+                    const targetGroup = this.getAttribute('data-target');
+                    
+                    // Show only the target group divs
+                    document.querySelectorAll('.' + targetGroup).forEach(div => {
+                        div.style.display = 'flex';
+                        div.style.flexDirection = 'row';
+                        div.style.justify = 'around';
+                        div.style.items = 'center';
+                    });
+                }
             });
         });
     </script>

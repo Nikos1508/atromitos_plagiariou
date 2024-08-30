@@ -1,4 +1,55 @@
 ---
 import Layout from "../../layout/default.astro"
-import Player from "../../components/Player.astro"
 ---
+<Layout>
+    <div id="mySidenav" class="sidenav h-full  w-0 fixed z-10  top-0 left-0 bg-[#111] overflow-x-hidden duration-500 pt-16">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"> </a>
+        <a href="#" class="p-3 no-underline text-[25px] text-[#818181] block duration-300"> About </a>
+        <a href="#"> Services </a>
+        <a href="#"> Clients </a>
+        <a href="#"> Contact </a>
+    </div>
+    
+    <div id="main">
+        <h2>Sidenav Push Example</h2>
+        <p>Click on the element below to open the side navigation menu, and push this content to the right.</p>
+        <button style="font-size:30px; cursor:pointer; background-color: aqua; padding: 10px;" id="open"> open</button>
+    </div>
+        
+    <script>
+        var button1 = document.getElementById("open");
+        button1.addEventListener("click", function() {
+            openNav;
+        });
+
+        function openNav() {
+            document.getElementById("mySidenav").style.width = "250px";
+            document.getElementById("main").style.marginLeft = "250px";
+        }
+
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+            document.getElementById("main").style.marginLeft= "0";
+        }
+    </script>
+
+    <style>
+
+        .sidenav a:hover, .offcanvas a:focus{
+            color: #f1f1f1;
+        }
+
+        .sidenav .closebtn {
+            position: absolute;
+            top: 0;
+            right: 25px;
+            font-size: 36px;
+            margin-left: 50px;
+        }
+
+        #main {
+            transition: margin-left .5s;
+            padding: 16px;
+        }
+    </style>
+</Layout>
