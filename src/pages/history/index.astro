@@ -2,14 +2,14 @@
 import Layout from "../../layout/default.astro"
 ---
 <Layout>
-    <div id="mySidenav" class="sidenav h-full  w-0 fixed z-10  top-0 left-0 bg-[#111] overflow-x-hidden duration-500 pt-16">
+    <div class="sidenav h-full  w-0 fixed z-10  top-0 left-0 bg-[#111] overflow-x-hidden duration-500 pt-16">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"> </a>
         <a href="#" class="p-3 no-underline text-[25px] text-[#818181] block duration-300"> About </a>
         <a href="#"> Services </a>
         <a href="#"> Clients </a>
         <a href="#"> Contact </a>
     </div>
-    
+
     <div id="main">
         <h2>Sidenav Push Example</h2>
         <p>Click on the element below to open the side navigation menu, and push this content to the right.</p>
@@ -18,13 +18,17 @@ import Layout from "../../layout/default.astro"
         
     <script>
         var button1 = document.getElementById("open");
+
         button1.addEventListener("click", function() {
             openNav;
         });
 
         function openNav() {
-            document.getElementById("mySidenav").style.width = "250px";
-            document.getElementById("main").style.marginLeft = "250px";
+            const target =  document.getElementsByClassName("sidenav");
+            const target2 = document.getElementById("main");
+            document.getElementById(target).style.width = "300px";
+            document.getElementById(target2).style.marginLeft = "250px";
+            document.getElementById(target2).style.color = "red";
         }
 
         function closeNav() {
