@@ -2,7 +2,7 @@
 let {name, image, position} = Astro.props
 ---
         {position == "Τερματοφύλακας" &&
-            <div class="player w-[17vw] bg-blue-400 flex flex-row items-center justify-around py-2 px-3 rounded-lg hover:bg-blue-300 hiddenDiv group1">
+            <div class="my-3 player w-[17vw] bg-blue-400 flex flex-row items-center justify-around py-2 px-3 rounded-lg hover:bg-blue-300 hiddenDiv group1">
                 <img src={image} class="w-[5vw] rounded-full">
                 <div class="flex flex-col items-center justify-evenly">
                     <p class="ml-[0.5vw]"> {name} </p>
@@ -14,7 +14,7 @@ let {name, image, position} = Astro.props
             </div>
         }
         {position == "Αμυντικός" &&
-            <div class="player w-[17vw] bg-blue-400 flex flex-row items-center justify-around py-2 px-3 rounded-lg hover:bg-blue-300 hiddenDiv group2">
+            <div class="my-3 player w-[17vw] bg-blue-400 flex flex-row items-center justify-around py-2 px-3 rounded-lg hover:bg-blue-300 hiddenDiv group2">
                 <img src={image} class="w-[5vw] rounded-full">
                 <div class="flex flex-col items-center justify-evenly">
                     <p class="ml-[0.5vw]"> {name} </p>
@@ -26,7 +26,7 @@ let {name, image, position} = Astro.props
             </div>
         }
         {position == "Μέσος" &&
-            <div class="player w-[17vw] bg-blue-400 flex flex-row items-center justify-around py-2 px-3 rounded-lg hover:bg-blue-300 hiddenDiv group3">
+            <div class="my-3 player w-[17vw] bg-blue-400 flex flex-row items-center justify-around py-2 px-3 rounded-lg hover:bg-blue-300 hiddenDiv group3">
                 <img src={image} class="w-[5vw] rounded-full">
                 <div class="flex flex-col items-center justify-evenly">
                     <p class="ml-[0.5vw]"> {name} </p>
@@ -38,7 +38,7 @@ let {name, image, position} = Astro.props
             </div>
         }
         {position == "Επιθετικός" &&
-            <div class="player w-[17vw] bg-blue-400 flex flex-row items-center justify-around py-2 px-3 rounded-lg hover:bg-blue-300 hiddenDiv group4">
+            <div class="my-3 player w-[17vw] bg-blue-400 flex flex-row items-center justify-around py-2 px-3 rounded-lg hover:bg-blue-300 hiddenDiv group4">
                 <img src={image} class="w-[5vw] rounded-full">
                 <div class="flex flex-col items-center justify-evenly">
                     <p class="ml-[0.5vw]"> {name} </p>

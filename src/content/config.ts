@@ -40,7 +40,21 @@ const playersCollection = defineCollection({
     player5: z.array( z.string() ),
     player6: z.array( z.string() ),
     player7: z.array( z.string() ),
-    player8: z.array( z.string() )
+    player8: z.array( z.string() ),
+    player9: z.array( z.string() ),
+    player10: z.array( z.string() ),
+    player11: z.array( z.string() ),
+    player12: z.array( z.string() ),
+    player13: z.array( z.string() ),
+    player14: z.array( z.string() ),
+    player15: z.array( z.string() ),
+    player16: z.array( z.string() ),
+    player17: z.array( z.string() ),
+    player18: z.array( z.string() ),
+    player19: z.array( z.string() ),
+    player20: z.array( z.string() ),
+    player21: z.array( z.string() ),
+    player22: z.array( z.string() )
   }),
 });
 

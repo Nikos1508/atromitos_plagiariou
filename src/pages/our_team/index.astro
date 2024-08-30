@@ -5,6 +5,7 @@ import { getCollection } from "astro:content";
 
 let players = await getCollection("players");
 players = players.map(entry => entry.data) as any;
+console.log(players[0].player10[2])
 ---
 
 <Layout title="Η ομάδα μας">
@@ -35,7 +36,7 @@ players = players.map(entry => entry.data) as any;
             </section>
         </div>
     
-        <div class="w-[40vw] h-[71vh] flex flex-col justify-evenly">
+        <div class="players w-[40vw] h-[70vh] flex flex-col justify-evenly relavtive overflow-hidden overflow-y-auto">
             
             <div class="flex flex-row justify-evenly">
                 <Player name = {players[0].player1[0]} image = {players[0].player1[1]} position = {players[0].player1[2]}/>
@@ -53,6 +54,34 @@ players = players.map(entry => entry.data) as any;
                 <Player name = {players[0].player7[0]} image = {players[0].player7[1]} position = {players[0].player7[2]}/>
                 <Player name = {players[0].player8[0]} image = {players[0].player8[1]} position = {players[0].player8[2]}/>
             </div>
+            <div class="flex flex-row justify-evenly">
+                <Player name = {players[0].player9[0]} image = {players[0].player9[1]} position = {players[0].player9[2]}/>
+                <Player name = {players[0].player10[0]} image = {players[0].player10[1]} position = {players[0].player10[2]}/>
+            </div>
+            <div class="flex flex-row justify-evenly">
+                <Player name = {players[0].player11[0]} image = {players[0].player11[1]} position = {players[0].player11[2]}/>
+                <Player name = {players[0].player12[0]} image = {players[0].player12[1]} position = {players[0].player12[2]}/>
+            </div>
+            <div class="flex flex-row justify-evenly">
+                <Player name = {players[0].player13[0]} image = {players[0].player13[1]} position = {players[0].player13[2]}/>
+                <Player name = {players[0].player14[0]} image = {players[0].player14[1]} position = {players[0].player14[2]}/>
+            </div>
+            <div class="flex flex-row justify-evenly">
+                <Player name = {players[0].player15[0]} image = {players[0].player15[1]} position = {players[0].player15[2]}/>
+                <Player name = {players[0].player16[0]} image = {players[0].player16[1]} position = {players[0].player16[2]}/>
+            </div>
+            <div class="flex flex-row justify-evenly">
+                <Player name = {players[0].player17[0]} image = {players[0].player17[1]} position = {players[0].player17[2]}/>
+                <Player name = {players[0].player18[0]} image = {players[0].player18[1]} position = {players[0].player18[2]}/>
+            </div>
+            <div class="flex flex-row justify-evenly">
+                <Player name = {players[0].player19[0]} image = {players[0].player19[1]} position = {players[0].player19[2]}/>
+                <Player name = {players[0].player20[0]} image = {players[0].player20[1]} position = {players[0].player20[2]}/>
+            </div>
+            <div class="flex flex-row justify-evenly">
+                <Player name = {players[0].player21[0]} image = {players[0].player21[1]} position = {players[0].player21[2]}/>
+                <Player name = {players[0].player22[0]} image = {players[0].player22[1]} position = {players[0].player22[2]}/>
+            </div>
 
         </div>
 
@@ -60,6 +89,9 @@ players = players.map(entry => entry.data) as any;
 
 
       <style>
+        .players::-webkit-scrollbar {
+            display: none;
+        }
         .triggerDiv {
             cursor: pointer;
         }

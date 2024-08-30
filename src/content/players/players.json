@@ -8,6 +8,17 @@
     "player7": ["Όνομα Επίθετο", "../../../public/banner.png", "Μέσος"],
     "player8": ["Όνομα Επίθετο", "../../../public/banner.png", "Μέσος"],
     "player9": ["Όνομα Επίθετο", "../../../public/banner.png", "Μέσος"],
-    "player10": ["Όνομα Επίθετο", "../../../public/banner.png", "Επίτε"],
-    "player11": ["Όνομα Επίθετο", "../../../public/banner.png", "Θέση"]
+    "player10": ["Όνομα Επίθετο", "../../../public/banner.png", "Επιθετικός"],
+    "player11": ["Όνομα Επίθετο", "../../../public/banner.png", "Επιθετικός"],
+    "player12": ["Όνομα Επίθετο", "../../../public/banner.png", "Αμυντικός"],
+    "player13": ["Όνομα Επίθετο", "../../../public/banner.png", "Αμυντικός"],
+    "player14": ["Όνομα Επίθετο", "../../../public/banner.png", "Αμυντικός"],
+    "player15": ["Όνομα Επίθετο", "../../../public/banner.png", "Αμυντικός"],
+    "player16": ["Όνομα Επίθετο", "../../../public/banner.png", "Μέσος"],
+    "player17": ["Όνομα Επίθετο", "../../../public/banner.png", "Μέσος"],
+    "player18": ["Όνομα Επίθετο", "../../../public/banner.png", "Μέσος"],
+    "player19": ["Όνομα Επίθετο", "../../../public/banner.png", "Μέσος"],
+    "player20": ["Όνομα Επίθετο", "../../../public/banner.png", "Επιθετικός"],
+    "player21": ["Όνομα Επίθετο", "../../../public/banner.png", "Επίθετικός"],
+    "player22": ["Όνομα Επίθετο", "../../../public/banner.png", "Τερματοφύλακας"]
 }
