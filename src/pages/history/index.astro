@@ -2,58 +2,25 @@
 import Layout from "../../layout/default.astro"
 ---
 <Layout>
-    <div class="sidenav h-full  w-0 fixed z-10  top-0 left-0 bg-[#111] overflow-x-hidden duration-500 pt-16">
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"> </a>
-        <a href="#" class="p-3 no-underline text-[25px] text-[#818181] block duration-300"> About </a>
-        <a href="#"> Services </a>
-        <a href="#"> Clients </a>
-        <a href="#"> Contact </a>
-    </div>
+    <div id="offCanvasMenu" class="off-canvas-menu h-full w-0 fixed z-10 top-0 left-0 bg-[#111] overflow-x-hidden duration-500 pt-14">
+        <span class="absolute top-[20px] right-[25px] text-3xl ml-[50px] cursor-pointer text-[#818181]" onclick="closeMenu()"> <i class="fa-solid fa-close"></i> </span>
 
-    <div id="main">
-        <h2>Sidenav Push Example</h2>
-        <p>Click on the element below to open the side navigation menu, and push this content to the right.</p>
-        <button style="font-size:30px; cursor:pointer; background-color: aqua; padding: 10px;" id="open"> open</button>
+        <div class="p-2 no-underline text-2xl text-[#818181] block duration-300 hover:text-[#f1f1f1]"> The same as a link </div>
     </div>
-        
+    
+    <span class="menu-btn text-3xl cursor-pointer" onclick="openMenu()"> <i class="fa-solid fa-bars"> </i> Off Canvas </span>
+
+    
     <script>
-        var button1 = document.getElementById("open");
-
-        button1.addEventListener("click", function() {
-            openNav;
-        });
-
-        function openNav() {
-            const target =  document.getElementsByClassName("sidenav");
-            const target2 = document.getElementById("main");
-            document.getElementById(target).style.width = "300px";
-            document.getElementById(target2).style.marginLeft = "250px";
-            document.getElementById(target2).style.color = "red";
+        function openMenu() {
+            document.getElementById("offCanvasMenu").style.width = "250px";
         }
 
-        function closeNav() {
-            document.getElementById("mySidenav").style.width = "0";
-            document.getElementById("main").style.marginLeft= "0";
+        function closeMenu() {
+            document.getElementById("offCanvasMenu").style.width = "0";
         }
+
+        document.querySelector('.menu-btn').addEventListener('click', openMenu);
+        document.querySelector('.close-btn').addEventListener('click', closeMenu);
     </script>
-
-    <style>
-
-        .sidenav a:hover, .offcanvas a:focus{
-            color: #f1f1f1;
-        }
-
-        .sidenav .closebtn {
-            position: absolute;
-            top: 0;
-            right: 25px;
-            font-size: 36px;
-            margin-left: 50px;
-        }
-
-        #main {
-            transition: margin-left .5s;
-            padding: 16px;
-        }
-    </style>
 </Layout>

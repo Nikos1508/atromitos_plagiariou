@@ -2,7 +2,7 @@
 let { image1, image2, image3, image4, image5} = Astro.props
 ---
 
-<div class="slideshow-container">
+<div class="slideshow-container max-w-[1000px] relative m-auto">
 
     {image1 &&
         <div class="mySlides fade">
@@ -30,7 +30,7 @@ let { image1, image2, image3, image4, image5} = Astro.props
     }
     {image5 &&
         <div class="mySlides fade">
-            <div class="numbertext">5 / 5</div>
+            <div class="numbertext tex">5 / 5</div>
             {image5}
         </div>
     }
@@ -38,13 +38,6 @@ let { image1, image2, image3, image4, image5} = Astro.props
   </div>
 
 <style>
-    
-.slideshow-container {
-  max-width: 1000px;
-  position: relative;
-  margin: auto;
-}
-
 .numbertext {
   color: #f2f2f2;
   font-size: 12px;
