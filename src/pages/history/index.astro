@@ -3,16 +3,25 @@ import Layout from "../../layout/default.astro"
 ---
 <Layout>
     <div id="offCanvasMenu" class="off-canvas-menu h-full w-0 fixed z-10 top-0 left-0 bg-[#111] overflow-x-hidden duration-500 pt-14">
-        <span class="close-btn absolute top-[20px] right-[25px] text-3xl ml-[50px] cursor-pointer text-[#818181]" onclick="closeMenu()"> <i class="fa-solid fa-close"></i> </span>
+        <span class="close-btn absolute top-[20px] right-[25px] text-3xl ml-[50px] cursor-pointer text-[#818181]"> <i class="fa-solid fa-close"></i> </span>
 
-        <div class="p-2 no-underline text-2xl text-[#818181] block duration-300 hover:text-[#f1f1f1]"> 
-            The same as a link 
-        </div>
+        <div class="p-2 no-underline text-2xl text-[#818181] block duration-300 hover:text-[#f1f1f1]"> The same as a link </div>
     </div>
+    <div id="offCanvasMenu2" class="off-canvas-menu h-full w-0 fixed z-10 top-0 left-0 bg-[#111] overflow-x-hidden duration-500 pt-14">
+        <span class="close2 absolute top-[20px] right-[25px] text-3xl ml-[50px] cursor-pointer text-[#818181]"> <i class="fa-solid fa-close"></i> </span>
 
+        <div class="p-2 no-underline text-2xl text-[#818181] block duration-300 hover:text-[#f1f1f1]"> The same as a link </div>
+    </div>
+    
+    <span class="menu-btn text-3xl cursor-pointer"> <i class="fa-solid fa-bars"> </i> Off Canvas </span>
+    <span class="menu2 text-3xl cursor-pointer"> <i class="fa-solid fa-bars"> </i> Off Canvas </span>
     
     <script>
         function openMenu() {
+            document.getElementById("offCanvasMenu").style.width = "250px";
+        }
+
+        function openMenu2() {
             document.getElementById("offCanvasMenu").style.width = "250px";
         }
 
@@ -20,7 +29,14 @@ import Layout from "../../layout/default.astro"
             document.getElementById("offCanvasMenu").style.width = "0";
         }
 
+        function closeMenu2() {
+            document.getElementById("offCanvasMenu").style.width = "0";
+        }
+
         document.querySelector('.menu-btn').addEventListener('click', openMenu);
+        document.querySelector('.menu2').addEventListener('click', openMenu2);
+        
         document.querySelector('.close-btn').addEventListener('click', closeMenu);
+        document.querySelector('.close2').addEventListener('click', closeMenu2);
     </script>
 </Layout>
