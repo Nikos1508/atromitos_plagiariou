@@ -3,12 +3,12 @@ import Layout from "../../layout/default.astro"
 ---
 <Layout>
     <div id="offCanvasMenu" class="off-canvas-menu h-full w-0 fixed z-10 top-0 left-0 bg-[#111] overflow-x-hidden duration-500 pt-14">
-        <span class="absolute top-[20px] right-[25px] text-3xl ml-[50px] cursor-pointer text-[#818181]" onclick="closeMenu()"> <i class="fa-solid fa-close"></i> </span>
+        <span class="close-btn absolute top-[20px] right-[25px] text-3xl ml-[50px] cursor-pointer text-[#818181]" onclick="closeMenu()"> <i class="fa-solid fa-close"></i> </span>
 
-        <div class="p-2 no-underline text-2xl text-[#818181] block duration-300 hover:text-[#f1f1f1]"> The same as a link </div>
+        <div class="p-2 no-underline text-2xl text-[#818181] block duration-300 hover:text-[#f1f1f1]"> 
+            The same as a link 
+        </div>
     </div>
-    
-    <span class="menu-btn text-3xl cursor-pointer" onclick="openMenu()"> <i class="fa-solid fa-bars"> </i> Off Canvas </span>
 
     
     <script>
