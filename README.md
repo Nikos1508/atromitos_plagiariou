@@ -2,14 +2,14 @@
 
 ## This is the official website of the Atromitos Plagiariou team
 
-It was made using: HTML, JS, CSS, Tailwind, TS, and Astro
+### It was made using: HTML, JS, CSS, Tailwind, TS, and Astro
 
-For running the website locally you should:
--- Clone it from Github
--- Open you terminal in your code editor
--- Run ```npm install```
--- Run ```npm run dev```
--- Click while holding ctrl in the local host link
+For running the website locally you should:<br />
+-- Clone it from Github <br />
+-- Open you terminal in your code editor <br />
+-- Run ```npm install``` <br />
+-- Run ```npm run dev``` <br />
+-- Click while holding ctrl in the local host link <br />
 
 
 Images from the website: <br />
