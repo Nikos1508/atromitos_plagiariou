@@ -1,10 +1,41 @@
 ---
-import Layout from "../layout/default.astro"
+import Layout from "../layout/default.astro";
+import AnnouncementCard from "../components/AnnouncementCard.astro";
 ---
 
 <Layout title="Αρχική σελίδα">
-	
-	
+  <section class="container mx-auto py-10 px-5 bg-gradient-to-b from-[#28579f] to-blue-300">
+    <!-- Announcement Cards -->
+    <div class="w-[100%] flex flex-row justify-evenly">
 
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <AnnouncementCard
+            title="Νέα Προπόνηση!"
+            text="Η ομάδα μας ξεκινάει τις νέες προπονήσεις από την επόμενη εβδομάδα!"
+            image="/training.jpg"
+        />
+
+        <AnnouncementCard
+            title="Νέος Αγώνας!"
+            text="Ο επόμενος αγώνας μας θα γίνει την Κυριακή! Ετοιμαστείτε!"
+            image="/match.jpg"
+        />
+        </div>
+
+    </div>
+
+    <div class="flex flex-col md:flex-row justify-evenly items-center mt-12 rounded-2xl">
+		
+        <img src="/Κισσός Χορτιάτη.png" alt="Ακαδημίες Ποδοσφαίρου" class="object-cover w-[30vw] rounded-xl">
+    
+        <div class="text-2xl text-header max-w-[40%] bg-blue-300 rounded-xl">
+    
+            <h1 class="text-3xl text-center p-1 py-2 bg-[#35cf54] rounded-t-xl"> Ακαδημίες Ποδοσφαίρου </h1>
+            <p class="text-xl text-left p-1 py-2 bg-slate-100 rounded-b-xl"> Οι εγγραφές για τις ακαδημίες μας ξεκίνησαν! Μην χάσετε την ευκαιρία!" </p>
+    
+        </div>
+
+    </div>
+
+  </section>
 </Layout>
-

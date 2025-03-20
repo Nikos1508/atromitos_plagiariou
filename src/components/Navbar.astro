@@ -1,58 +1,29 @@
-<nav class="flex flex-row items-center">
+<nav class="flex items-center justify-between bg-[#28579f] py-4 px-8 shadow-md">
+    <a href="/" class="text-white text-3xl font-bold hover:text-blue-300 transition-all duration-300">
+        <img src="/banner.png" alt="Logo" class="w-28 inline-block mr-3 rounded-xl">
+    </a>
+    
+    <div class="hidden md:flex space-x-6">
+        <a href="/"             class="text-white text-2xl font-semibold transition-[color] duration-[0.3s] ease-[ease-in-out] hover:text-[#a3d5ff]"> Αρχική</a>
+        <a href="/championship" class="text-white text-2xl font-semibold transition-[color] duration-[0.3s] ease-[ease-in-out] hover:text-[#a3d5ff]"> Πρωτάθλημα</a>
+        <a href="/programs"     class="text-white text-2xl font-semibold transition-[color] duration-[0.3s] ease-[ease-in-out] hover:text-[#a3d5ff]"> Προγράμματα</a>
+        <a href="/matches"      class="text-white text-2xl font-semibold transition-[color] duration-[0.3s] ease-[ease-in-out] hover:text-[#a3d5ff]"> Αγώνες</a>
+    </div>
 
-    <a href="/" aria-label="Ατρόμητος Πλαγιαρίου"><img src="/banner.png" alt="Logo" class="w-[10vw]"/></a>
+    <button id="menu-btn" class="md:hidden text-white text-3xl">
+        <i class="fa-solid fa-bars"></i>
+    </button>
 
-    <div class="flex flex-row items-center justify-evenly w-[90vw]">
-        
-        <div class="nav-link font-bold opacity-75 relative text-5xl no-underline text-zinc-300 hover:text-zinc-50">
-            <a href= "/" class="no-underline"> 
-                <i class="fa-solid fa-house"></i>
-                <slot class="navbar-item"> Αρχική </slot> 
-            </a>
-        </div>
-
-        <div class="nav-link font-bold opacity-75 relative text-5xl no-underline text-zinc-300 hover:text-zinc-50">
-            <i class="fa-solid fa-trophy"></i>
-            <a href= "/championship" class="no-underline"> <slot class="navbar-item"> Πρωτάθλημα </slot> </a>
-        </div>
-
-        <div class="">
-            <div class="dropdown border-none outline-none text-center overflow-hidden flex flex-col items-center">
-                <div class="dropbtn border-none outline-none text-center overflow-hidden font-bold opacity-75 relative no-underline text-5xl text-zinc-300 hover:text-zinc-50"> Η ομάδα μας <i class="fa-solid fa-caret-down"></i> </div>
-                <div class="dropdown-content hidden absolute min-w-40 z-10 mt-[50px] py-2.5 rounded-lg">
-                    <a href="/history" class="  float-none  py-3 px-4 no-underline block text-center text-4xl rounded-t-xl  bg-slate-400 text-zinc-700 hover:text-zinc-50 bg-opacity-95 hover:bg-dropdown-bg hover:bg-opacity-95 "> <i class="fa-solid fa-clock-rotate-left"></i>   Η ιστορία μας   </a>
-                    <a href="/programs" class=" float-none  py-3 px-4 no-underline block text-center text-4xl               bg-slate-400 text-zinc-700 hover:text-zinc-50 bg-opacity-95 hover:bg-dropdown-bg hover:bg-opacity-95 "> <i class="fa-solid fa-calendar"></i>           Προγράμματα     </a>
-                    <a href="/our_team" class=" float-none  py-3 px-4 no-underline block text-center text-4xl rounded-b-xl   bg-slate-400 text-zinc-700 hover:text-zinc-50 bg-opacity-95 hover:bg-dropdown-bg hover:bg-opacity-95"> <i class="fa-solid fa-people-group"></i>       Ομάδα αγώνων    </a>
-                </div>
-            </div>
-        </div>
-
-        <div class="nav-link font-bold opacity-75 relative text-5xl no-underline text-zinc-300 hover:text-zinc-50">
-            <a href= "/matches" class="no-underline">
-                <i class="fa-solid fa-futbol"></i>
-                <slot class="navbar-item"> Αγώνες </slot>
-            </a>
-        </div>
+    <div id="mobile-menu" class="hidden absolute top-16 left-0 w-full bg-blue-800 p-4 text-center">
+        <a href="/" class="block text-white py-2">Αρχική</a>
+        <a href="/championship" class="block text-white py-2">Πρωτάθλημα</a>
+        <a href="/programs" class="block text-white py-2">Προγράμματα</a>
+        <a href="/matches" class="block text-white py-2">Αγώνες</a>
     </div>
 </nav>
-<style>
 
-    .nav-link::before {
-        transition: 1000ms;
-        height: 6px;
-        content: "";
-        position: absolute;
-        background-color: #rgb(40, 87, 159);
-        width: 0%;
-        bottom: -8px;
-        }
-
-    .nav-link:hover::before {
-        background-color: rgb(133, 216, 255);
-        width: 100%;
-    }
-
-    .dropdown:hover .dropdown-content {
-        display: block;
-    }
-</style>
+<script>
+    document.getElementById("menu-btn").addEventListener("click", function() {
+        document.getElementById("mobile-menu").classList.toggle("hidden");
+    });
+</script>
