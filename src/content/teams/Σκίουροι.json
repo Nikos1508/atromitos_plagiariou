@@ -1,9 +1,10 @@
 {
     "image": "/Σκίουροι.png",
     "team": "Σκίουροι",
-    "points": "0",
-    "goals": "0",
-    "wins": "0",
-    "draws": "0",
-    "loses": "0"
+    "matches": "19",
+    "points": "37",
+    "goals": "39-16",
+    "wins": "11",
+    "draws": "4",
+    "loses": "4"
 }

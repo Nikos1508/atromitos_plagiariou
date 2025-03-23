@@ -49,6 +49,7 @@ const teamsCollection = defineCollection({
   schema: z.object({
     image:  z.string(),
     team:   z.string(),
+    matches:   z.string(),
     points: z.string(),
     goals:  z.string(),
     wins:   z.string(),

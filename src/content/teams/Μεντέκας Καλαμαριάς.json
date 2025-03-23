@@ -1,9 +1,10 @@
 {
     "image": "/Μεντέκας Καλαμαριάς.png",
     "team": "Μεντέκας Καλαμαριάς",
-    "points": "0",
-    "goals": "0",
-    "wins": "0",
-    "draws": "0",
-    "loses": "0"
+    "matches": "18",
+    "points": "18",
+    "goals": "16-29",
+    "wins": "6",
+    "draws": "1",
+    "loses": "11"
 }

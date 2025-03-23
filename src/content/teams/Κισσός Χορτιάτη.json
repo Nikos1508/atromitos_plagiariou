@@ -1,9 +1,10 @@
 {
     "image": "/Κισσός Χορτιάτη.png",
     "team": "Κισσός Χορτιάτη",
-    "points": "0",
-    "goals": "0",
-    "wins": "0",
-    "draws": "0",
-    "loses": "0"
+    "matches": "18",
+    "points": "8",
+    "goals": "14-43",
+    "wins": "2",
+    "draws": "2",
+    "loses": "14"
 }

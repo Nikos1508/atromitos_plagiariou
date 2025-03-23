@@ -10,10 +10,10 @@ home = home.map(entry => entry.data) as any;
 
 <Layout title="Αρχική σελίδα">
   <section class="container mx-auto py-10 px-5 bg-gradient-to-b from-[#28579f] to-blue-300">
-    <!-- Announcement Cards -->
+    <!-- Announcement Cards
     <div class="w-[100%] flex flex-row justify-evenly">
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
         <AnnouncementCard
             title={home[0].banners.first_banner_title}
             text={home[0].banners.first_banner}
@@ -25,23 +25,18 @@ home = home.map(entry => entry.data) as any;
             text={home[0].banners.second_banner}
             image="/match.jpg"
         />
-
-        <AnnouncementCard
-            title={home[0].banners.third_banner_title}
-            text={home[0].banners.third_banner}
-            image="/match.jpg"
-        />
         </div>
 
     </div>
+  -->
 
     <div class="flex flex-col md:flex-row justify-evenly items-center mt-12 rounded-2xl">
 		
-        <img src={home[0].paragraphs.first.image} alt="Ακαδημίες Ποδοσφαίρου" class="object-cover w-[25vw] rounded-xl">
+        <img src={home[0].paragraphs.first.image} alt="Ακαδημίες Ποδοσφαίρου" class="object-cover w-[30vw] rounded-xl">
     
         <div class="text-2xl text-header max-w-[40%] bg-blue-300 rounded-xl">
     
-            <h1 class="text-2xl text-center p-1 py-2 bg-[#4169E1] text-blue-200 rounded-t-xl"> {home[0].paragraphs.first.image} </h1>
+            <h1 class="text-2xl text-center p-1 py-2 bg-[#4169E1] text-blue-200 rounded-t-xl"> {home[0].paragraphs.first.title} </h1>
             <p class="text-lg text-left p-1 py-2 bg-slate-100 rounded-b-xl"> {home[0].paragraphs.first.text} </p>
     
         </div>

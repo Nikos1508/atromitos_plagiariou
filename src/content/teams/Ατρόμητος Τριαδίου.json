@@ -1,9 +1,10 @@
 {
     "image": "/Ατρόμητος Τριαδίου.png",
     "team": "Ατρόμητος Τριαδίου",
-    "points": "0",
-    "goals": "0",
-    "wins": "0",
-    "draws": "0",
-    "loses": "0"
+    "matches": "18",
+    "points": "32",
+    "goals": "36-27",
+    "wins": "10",
+    "draws": "2",
+    "loses": "6"
 }

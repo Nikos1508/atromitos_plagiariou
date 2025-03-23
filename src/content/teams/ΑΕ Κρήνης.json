@@ -1,9 +1,10 @@
 {
     "image": "/ΑΕ Κρήνης.png",
     "team": "ΑΕ Κρήνης",
-    "points": "0",
-    "goals": "0",
-    "wins": "0",
-    "draws": "0",
-    "loses": "0"
+    "matches": "18",
+    "points": "39",
+    "goals": "31-8",
+    "wins": "11",
+    "draws": "6",
+    "loses": "1"
 }
