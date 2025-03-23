@@ -11,7 +11,7 @@ const teams = await Promise.all(championship.positions.map(
 
 <Layout title="Πρωτάθλημα">
   <div>
-    <table class="w-full text-2xl font-semibold text-sky-100">
+    <table class="alternate w-full text-2xl font-semibold text-sky-100">
       <tr class="h-20">
         <th class="w-[11vw]">           </th>
         <th class="w-[30vw]"> Ομάδα     </th>
@@ -41,6 +41,13 @@ const teams = await Promise.all(championship.positions.map(
     text-align: center;
     border-top: 3px solid;
     border-color: rgb(123, 170, 252);
+  }
+  table.alternate tr:nth-child(odd) {
+    background-color: rgb(40 87 159 / 0.8);
+  }
+  
+  table.alternate tr:nth-child(even) {
+      background-color: #28579f;
   }
 </style>
 </Layout>

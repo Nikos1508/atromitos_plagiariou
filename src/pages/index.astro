@@ -1,6 +1,11 @@
 ---
 import Layout from "../layout/default.astro";
 import AnnouncementCard from "../components/AnnouncementCard.astro";
+
+import { getCollection } from "astro:content";
+
+let home = await getCollection("home");
+home = home.map(entry => entry.data) as any;
 ---
 
 <Layout title="Αρχική σελίδα">
@@ -8,16 +13,22 @@ import AnnouncementCard from "../components/AnnouncementCard.astro";
     <!-- Announcement Cards -->
     <div class="w-[100%] flex flex-row justify-evenly">
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
         <AnnouncementCard
-            title="Νέα Προπόνηση!"
-            text="Η ομάδα μας ξεκινάει τις νέες προπονήσεις από την επόμενη εβδομάδα!"
+            title={home[0].banners.first_banner_title}
+            text={home[0].banners.first_banner}
             image="/training.jpg"
         />
 
         <AnnouncementCard
-            title="Νέος Αγώνας!"
-            text="Ο επόμενος αγώνας μας θα γίνει την Κυριακή! Ετοιμαστείτε!"
+            title={home[0].banners.second_banner_title}
+            text={home[0].banners.second_banner}
+            image="/match.jpg"
+        />
+
+        <AnnouncementCard
+            title={home[0].banners.third_banner_title}
+            text={home[0].banners.third_banner}
             image="/match.jpg"
         />
         </div>
@@ -26,14 +37,27 @@ import AnnouncementCard from "../components/AnnouncementCard.astro";
 
     <div class="flex flex-col md:flex-row justify-evenly items-center mt-12 rounded-2xl">
 		
-        <img src="/Κισσός Χορτιάτη.png" alt="Ακαδημίες Ποδοσφαίρου" class="object-cover w-[30vw] rounded-xl">
+        <img src={home[0].paragraphs.first.image} alt="Ακαδημίες Ποδοσφαίρου" class="object-cover w-[25vw] rounded-xl">
     
         <div class="text-2xl text-header max-w-[40%] bg-blue-300 rounded-xl">
     
-            <h1 class="text-3xl text-center p-1 py-2 bg-[#35cf54] rounded-t-xl"> Ακαδημίες Ποδοσφαίρου </h1>
-            <p class="text-xl text-left p-1 py-2 bg-slate-100 rounded-b-xl"> Οι εγγραφές για τις ακαδημίες μας ξεκίνησαν! Μην χάσετε την ευκαιρία!" </p>
+            <h1 class="text-2xl text-center p-1 py-2 bg-[#4169E1] text-blue-200 rounded-t-xl"> {home[0].paragraphs.first.image} </h1>
+            <p class="text-lg text-left p-1 py-2 bg-slate-100 rounded-b-xl"> {home[0].paragraphs.first.text} </p>
     
         </div>
+
+    </div>
+
+    <div class="flex flex-col md:flex-row justify-evenly items-center mt-12 rounded-2xl">
+		
+        <div class="text-2xl text-header max-w-[40%] bg-blue-300 rounded-xl">
+    
+            <h1 class="text-2xl text-center p-1 py-2 bg-[#4169E1] text-blue-200 rounded-t-xl"> {home[0].paragraphs.second.title} </h1>
+            <p class="text-lg text-left p-1 py-2 bg-slate-100 rounded-b-xl"> {home[0].paragraphs.second.text} </p>
+    
+        </div>
+
+        <img src={home[0].paragraphs.second.image} alt="Ακαδημίες Ποδοσφαίρου" class="object-cover w-[25vw] rounded-xl">
 
     </div>
 

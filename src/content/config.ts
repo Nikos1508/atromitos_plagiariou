@@ -16,6 +16,33 @@ const championshipCollection = defineCollection({
     positions: z.array( z.string() )
   }),
 });
+
+const homeCollection = defineCollection({
+  schema: z.object({
+    banners: z.object({
+      first_banner_title: z.string(),
+      first_banner: z.string(),
+      second_banner_title: z.string(),
+      second_banner: z.string(),
+      third_banner_title: z.string(),
+      third_banner: z.string()
+    }),
+
+    paragraphs: z.object({
+      first: z.object({
+        title: z.string(),
+        text: z.string(),
+        image: z.string()
+      }),
+      second: z.object({
+        title: z.string(),
+        text: z.string(),
+        image: z.string()
+      })
+    })
+
+  }),
+});
   
 const teamsCollection = defineCollection({
   type: 'data',
@@ -88,5 +115,6 @@ const programsCollection = defineCollection({
     'championship': championshipCollection,
     'teams': teamsCollection,
     'programs': programsCollection,
-    'players': playersCollection
+    'players': playersCollection,
+    'home': homeCollection
   };
